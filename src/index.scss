@@ -1,0 +1,19 @@
+@import '@picocss/pico/scss/pico';
+
+[data-theme='light'],
+:root:not([data-theme='dark']) {
+  --primary: #3c6255;
+  --primary-hover: #61876e;
+
+  --background-color: #eceae1;
+
+  --color: #3c6255;
+
+  --typography-spacing-vertical: 1rem;
+}
+
+body {
+  font-family: 'Montserrat';
+}
+
+/* #3C6255 #61876E #A6BB8D #EAE7B1 */

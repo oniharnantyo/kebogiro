@@ -1,0 +1,13 @@
+.footer {
+  padding: 2rem;
+  background-position: center center;
+  background-size: cover;
+}
+
+.inviters li {
+  list-style-type: none !important;
+}
+
+.groomBride {
+  font-size: 2rem;
+}

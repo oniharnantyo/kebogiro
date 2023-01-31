@@ -1,0 +1,73 @@
+.bride {
+  margin-bottom: 1rem;
+  padding: 1rem 1rem;
+}
+
+.groom {
+  padding: 1rem 1rem;
+}
+
+.content {
+  text-align: center;
+  margin: auto 0.5rem;
+}
+
+.name {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.childOf {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.imageFrame {
+  z-index: 1;
+  margin-top: 80px;
+  width: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden !important;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.personWrapper {
+  position: relative;
+}
+
+.personBg {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  top: -80px;
+  background-color: #3C6255;
+  z-index: -99;
+  padding: 0.75rem;
+}
+
+.personBg.bride {
+  left: -40px;
+}
+
+.personBg.groom {
+  right: -40px;
+}
+
+.personTitle {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2rem;
+  color: white;
+}
