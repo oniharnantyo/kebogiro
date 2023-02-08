@@ -1,4 +1,5 @@
 @import '@picocss/pico/scss/pico';
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
 [data-theme='light'],
 :root:not([data-theme='dark']) {
@@ -8,8 +9,17 @@
   --background-color: #eceae1;
 
   --color: #3c6255;
+  --h1-color: #3c6255;
+  --h2-color: #3c6255;
+  --h3-color: #3c6255;
+  --h4-color: #3c6255;
+  --h5-color: #3c6255;
 
   --typography-spacing-vertical: 1rem;
+
+  --form-element-background-color: #eae7b1;
+  --form-element-spacing-vertical: 0.5rem;
+  --form-element-spacing-horizontal: 0.5rem;
 }
 
 body {

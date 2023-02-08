@@ -1,0 +1,29 @@
+.countdown {
+  height: 350px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.date {
+  font-family: 'Libre Baskerville', serif;
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1.3rem !important;
+}
+
+.counter {
+  background-color: #EAE7B1;
+  opacity: 0.8;
+  border-radius: 5px;
+  padding: 0.5rem 0.1rem;
+}
+
+.counter__item {
+  font-size: 1.5rem;
+}
+
+.counter__label {
+  font-size: 1rem;
+}

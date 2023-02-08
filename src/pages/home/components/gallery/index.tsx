@@ -18,7 +18,7 @@ const images = [
 
 const Gallery = () => {
   return (
-    <section className={'container-fluid'}>
+    <section>
       <div className='flexbin'>
         {images.map((image, i) => (
           <a key={i} href={image}>

@@ -1,0 +1,25 @@
+.greeting {
+  padding: 2rem 0;
+}
+
+.title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.greetings {
+  height: 400px;
+  overflow: auto;
+  margin-top: 1rem;
+}
+
+.greeting-items__name {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+
+.greeting-items__greet {
+  margin-bottom: 1rem;
+}

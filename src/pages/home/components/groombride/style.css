@@ -34,8 +34,8 @@
 
 .imageWrapper {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
   overflow: hidden;
 }
 
@@ -49,25 +49,48 @@
 }
 
 .personBg {
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
   position: absolute;
-  top: -80px;
+  top: -60px;
   background-color: #3C6255;
   z-index: -99;
-  padding: 0.75rem;
+  padding: 0.5rem;
 }
 
 .personBg.bride {
-  left: -40px;
+  left: -30px;
 }
 
 .personBg.groom {
-  right: -40px;
+  right: -30px;
 }
 
 .personTitle {
   font-family: 'Libre Baskerville', serif;
   font-size: 2rem;
   color: white;
+}
+
+@media (min-width: 768px) {
+  .imageWrapper {
+    width: 350px;
+    height: 350px;
+  }
+
+  .personBg {
+    width: 350px;
+    height: 350px;
+    top: -80px;
+    z-index: -99;
+    padding: 0.75rem;
+  }
+
+  .personBg.bride {
+    left: -40px;
+  }
+
+  .personBg.groom {
+    right: -40px;
+  }
 }

@@ -17,7 +17,7 @@ const GroomBride = () => {
     <section
       className='container'
       style={{
-        padding: '4rem 0',
+        padding: '4rem 2rem',
       }}
     >
       <div>

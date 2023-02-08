@@ -1,0 +1,20 @@
+.event {
+  padding: 3rem 0;
+}
+
+.event__title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.event__content {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.event__placelink {
+  text-decoration: underline;
+  font-size: 1rem;
+}
