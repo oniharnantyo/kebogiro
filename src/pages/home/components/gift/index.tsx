@@ -1,3 +1,3 @@
-const Gift = () => {
-  
-}
+const Gift = () => {};
+
+export default Gift;
