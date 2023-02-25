@@ -8,6 +8,8 @@ import Countdown from './components/countdown';
 import Event from './components/event';
 import IEvent from '../../models/event';
 import Greeting from './components/greeting';
+import Gift from './components/gift';
+import Story from './components/story';
 
 const Home = () => {
   const [isCover, setIsCover] = useState(false);
@@ -36,9 +38,11 @@ const Home = () => {
       <Cover isCover={isCover} setIsCover={setIsCover} />
       <div className={isCover ? 'hasCover' : ''}>
         <GroomBride />
+        <Story />
+        <Gallery />
         <Countdown date={eventDate}></Countdown>
         <Event events={events}></Event>
-        <Gallery />
+        <Gift />
         <Greeting />
         <Footer />
       </div>

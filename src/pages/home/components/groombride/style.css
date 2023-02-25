@@ -72,6 +72,10 @@
   color: white;
 }
 
+.logo {
+  width: 40px;
+}
+
 @media (min-width: 768px) {
   .imageWrapper {
     width: 350px;

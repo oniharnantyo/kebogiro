@@ -1,0 +1,26 @@
+.head {
+  margin-bottom: 3rem;
+}
+
+.quote {
+  font-style: italic;
+  font-weight: 3  00;
+}
+
+.vertical-divider {
+  display: block;
+  width: 1px;
+  height: 80px;
+  margin: 0 auto 2rem;
+  background-color: #3c6255;
+}
+
+.vertical-divider.bottom {
+  margin: 2rem auto 0;
+}
+
+@media screen and (max-width: 600px) {
+  .vertical-divider.top {
+    margin-top: 1rem;
+  }
+}

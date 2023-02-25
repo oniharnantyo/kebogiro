@@ -1,0 +1,56 @@
+.story {
+  padding: 4rem 0 4rem 0;
+  background-color: #A6BB8D;
+}
+
+.carousel {
+  padding-top: 1rem;
+}
+
+.title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.year {
+  font-size: 2rem;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.image {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.vertical-divider {
+  display: block;
+  width: 1px;
+  height: 80px;
+  margin: 0 auto 2rem;
+  background-color: #3c6255;
+}
+
+.vertical-divider.bottom {
+  margin: 2rem auto 0;
+}
+
+.nav-container {
+  position: absolute;
+  right: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-button {
+  font-size: 1rem;
+  border-radius: 50% !important;
+  padding: 0.45rem 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .vertical-divider.top {
+    margin-top: 1rem;
+  }
+}

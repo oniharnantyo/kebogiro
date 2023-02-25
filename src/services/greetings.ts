@@ -40,6 +40,8 @@ export const fetchGreetings = async ({
 };
 
 export const addGreeting = async (greeting: IGreeting) => {
+  console.log(greeting);
+
   try {
     const res = await addDoc(collection(database, GreetsCollection), greeting);
     return res;

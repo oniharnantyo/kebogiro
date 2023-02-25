@@ -11,10 +11,15 @@
 
 .event__content {
   text-transform: uppercase;
-  font-size: 1.1rem;
+  font-weight: 300;
+  font-size: 0.8rem;
 }
 
 .event__placelink {
   text-decoration: underline;
-  font-size: 1rem;
+  font-size: 0.8rem;
+}
+
+.event__placelink a {
+  font-size: 0.8rem;
 }

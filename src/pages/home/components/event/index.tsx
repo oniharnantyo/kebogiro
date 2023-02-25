@@ -50,7 +50,7 @@ const Event: EventProps = ({ events }) => {
                 }}
               >
                 <a href={e.placeLink} className='event__placelink'>
-                  <p>{e.place}</p>
+                  {e.place}
                 </a>
               </div>
             </div>

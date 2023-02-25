@@ -10,8 +10,8 @@ interface Values {
 }
 
 interface Errors {
-  name: string;
-  greet: string;
+  name?: string;
+  greet?: string;
 }
 
 const Greeting = () => {
@@ -62,6 +62,7 @@ const Greeting = () => {
 
   useEffect(() => {
     getGreetingsData();
+    setIsNewGreeting(false);
   }, [isNewGreeting]);
 
   return (
@@ -70,91 +71,91 @@ const Greeting = () => {
       <div className='row'>
         <div className='col-md-offset-1' />
         <div className='col-xs'>
-          <Form
-            onSubmit={onSubmit}
-            validate={(values) => {
-              const errors: Errors = {
-                name: '',
-                greet: '',
-              };
-
-              if (!values.name) {
-                errors.name = 'Required';
-              }
-              if (!values.greet) {
-                errors.greet = 'Required';
-              }
-              return errors;
-            }}
-            render={({ submitError, handleSubmit, form, submitting, pristine, values }) => (
-              <form
-                onSubmit={async (event: any) => {
-                  const error = await handleSubmit(event);
-                  if (error) {
-                    return error;
-                  }
-                  form.reset();
-                  form.resetFieldState('name');
-                  form.resetFieldState('greet');
-                }}
-              >
-                <Field name='name'>
-                  {({ input, meta }) => (
-                    <div>
-                      <label htmlFor='name'>
-                        Nama{' '}
-                        {(meta.error || meta.submitError) && meta.touched && (
-                          <span style={{ color: 'red' }}>{meta.error || meta.submitError}</span>
-                        )}
-                      </label>
-                      <input type='text' {...input} name='name' />
+          <div className='container'>
+            <Form
+              onSubmit={onSubmit}
+              validate={(values) => {
+                const errors: Errors = {};
+                if (!values.name) {
+                  errors.name = 'Wajib diisi';
+                }
+                if (!values.greet) {
+                  errors.greet = 'Wajib diisi';
+                }
+                return errors;
+              }}
+              render={({ submitError, handleSubmit, form, submitting, pristine, values }) => (
+                <form
+                  onSubmit={async (event: any) => {
+                    const error = await handleSubmit(event);
+                    if (error) {
+                      return error;
+                    }
+                    form.reset();
+                    form.resetFieldState('name');
+                    form.resetFieldState('greet');
+                  }}
+                >
+                  <Field name='name'>
+                    {({ input, meta }) => (
+                      <div>
+                        <label htmlFor='name'>
+                          Nama{' '}
+                          {(meta.error || meta.submitError) && meta.touched && (
+                            <span style={{ color: 'red' }}>{meta.error || meta.submitError}</span>
+                          )}
+                        </label>
+                        <input type='text' {...input} name='name' />
+                      </div>
+                    )}
+                  </Field>
+                  <Field name='greet'>
+                    {({ input, meta }) => (
+                      <div>
+                        <label htmlFor='greet'>
+                          Ucapan{' '}
+                          {(meta.error || meta.submitError) && meta.touched && (
+                            <span style={{ color: 'red' }}>{meta.error || meta.submitError}</span>
+                          )}
+                        </label>
+                        <textarea {...input} name='greet' />
+                      </div>
+                    )}
+                  </Field>
+                  {submitError && <div className='error'>{submitError}</div>}
+                  <div className='row center-xs'>
+                    <div className='col-xs-12 col-md-6 col-lg-4'>
+                      <button type='submit' disabled={submitting || pristine}>
+                        Kirim Sekarang
+                      </button>
                     </div>
-                  )}
-                </Field>
-                <Field name='greet'>
-                  {({ input, meta }) => (
-                    <div>
-                      <label htmlFor='greet'>
-                        Ucapan{' '}
-                        {(meta.error || meta.submitError) && meta.touched && (
-                          <span style={{ color: 'red' }}>{meta.error || meta.submitError}</span>
-                        )}
-                      </label>
-                      <textarea {...input} name='greet' />
-                    </div>
-                  )}
-                </Field>
-                {submitError && <div className='error'>{submitError}</div>}
-                <div className='row center-xs'>
-                  <div className='col-xs-12 col-md-6 col-lg-4'>
-                    <button type='submit' disabled={submitting || pristine}>
-                      Kirim Sekarang
-                    </button>
                   </div>
-                </div>
-              </form>
-            )}
-          />
+                </form>
+              )}
+            />
+          </div>
         </div>
         <div className='col-md-offset-1' />
       </div>
       <div className='row greetings'>
         <div className='col-md-offset-1' />
         <div className='col-xs'>
-          <div>
-            {greetings.map((greeting) => (
-              <GreetingItem
-                name={greeting.name}
-                greet={greeting.greet}
-                createdAt={greeting.createdAt}
-              />
-            ))}
-          </div>
-          <div className='row center-xs'>
-            <div className='col-xs-12 col-md-6 col-lg-4'>
-              <button className='outline' onClick={handleLoadMore} disabled={isLastPage}>
-                Lihat Lainnya
-              </button>
+          <div className='container'>
+            <div>
+              {greetings.map((greeting) => (
+                <GreetingItem
+                  name={greeting.name}
+                  greet={greeting.greet}
+                  createdAt={greeting.createdAt}
+                />
+              ))}
+            </div>
+            <div className='row center-xs'>
+              <div className='col-xs-12 col-md-6 col-lg-4'>
+                <button className='outline' onClick={handleLoadMore} disabled={isLastPage}>
+                  Lihat Lainnya
+                </button>
+              </div>
             </div>
           </div>
         </div>

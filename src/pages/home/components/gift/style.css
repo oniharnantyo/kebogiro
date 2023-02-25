@@ -1,0 +1,41 @@
+.gift {
+  padding: 4rem 0;
+  background-color: #A6BB8D;
+}
+
+.title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.placeholder {
+  background-color: #EAE7B1;
+  padding: 2rem 1.5rem;
+  min-height: 400px;
+}
+
+.gift-list {
+  margin-bottom: 1rem;
+}
+
+.bank-account-item>li {
+  list-style-type: none;
+  padding: 0;
+}
+
+.account {
+  font-weight: bold;
+}
+
+.copy-link {
+  cursor: pointer;
+}
+
+.copy-icon {
+  height: 1rem;
+  display: inline-block;
+  overflow: visible;
+  vertical-align: -0.15em;
+  margin-left: 5px;
+}
