@@ -1,4 +1,4 @@
-import './style.css';
+import style from './style.module.css';
 import coverImage from '../../../../assets/cover.jpeg';
 
 interface CoverProps {
@@ -12,18 +12,18 @@ const Cover = (props: CoverProps) => {
   };
 
   return (
-    <div className={`cover ${!props.isCover && 'uncover'}`}>
+    <div className={`${style.cover} ${!props.isCover && style.uncover}`}>
       <section
-        className='container-fluid contentWrapper'
+        className={`container-fluid ${style.contentWrapper}`}
         style={{ backgroundImage: `url(${coverImage})` }}
       >
-        <div className='textWrapper'>
-          <h1 className='text title'>Erina &</h1>
-          <h1 className='text title'>Kaesang</h1>
-          <h3 className='text subtitle'>31 . 12 . 2023</h3>
+        <div className={`${style.textWrapper}`}>
+          <h1 className={`${style.text} ${style.title}`}>Erina &</h1>
+          <h1 className={`${style.text} ${style.title}`}>Kaesang</h1>
+          <h3 className={`${style.text} ${style.subtitle}`}>31 . 12 . 2023</h3>
         </div>
-        <div className='btnFloating'>
-          <a href='#' role='button' className='style.btn' onClick={handleIsCover}>
+        <div className={`${style.btnFloating}`}>
+          <a href='#' role='button' onClick={handleIsCover}>
             Buka Undangan
           </a>
         </div>

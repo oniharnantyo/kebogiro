@@ -14,12 +14,12 @@
   margin-top: 1rem;
 }
 
-.greeting-items__name {
+.name {
   font-family: 'Libre Baskerville', serif;
   font-weight: bolder;
   margin-bottom: 0;
 }
 
-.greeting-items__greet {
+.greet {
   margin-bottom: 1rem;
 }

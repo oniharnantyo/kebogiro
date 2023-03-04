@@ -15,11 +15,11 @@
   min-height: 400px;
 }
 
-.gift-list {
+.giftList {
   margin-bottom: 1rem;
 }
 
-.bank-account-item>li {
+.bankAccountItem>li {
   list-style-type: none;
   padding: 0;
 }
@@ -28,11 +28,11 @@
   font-weight: bold;
 }
 
-.copy-link {
+.copyLink {
   cursor: pointer;
 }
 
-.copy-icon {
+.copyIcon {
   height: 1rem;
   display: inline-block;
   overflow: visible;

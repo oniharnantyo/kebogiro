@@ -4,10 +4,10 @@
 
 .quote {
   font-style: italic;
-  font-weight: 3  00;
+  font-weight: 3 00;
 }
 
-.vertical-divider {
+.verticalDivider {
   display: block;
   width: 1px;
   height: 80px;
@@ -15,12 +15,12 @@
   background-color: #3c6255;
 }
 
-.vertical-divider.bottom {
+.verticalDivider.bottom {
   margin: 2rem auto 0;
 }
 
 @media screen and (max-width: 600px) {
-  .vertical-divider.top {
+  .verticalDivider.top {
     margin-top: 1rem;
   }
 }

@@ -2,24 +2,24 @@
   padding: 3rem 0;
 }
 
-.event__title {
+.title {
   font-family: 'Libre Baskerville', serif;
   font-size: 1.4rem;
   font-style: italic;
   font-weight: bolder;
 }
 
-.event__content {
+.content {
   text-transform: uppercase;
   font-weight: 300;
   font-size: 0.8rem;
 }
 
-.event__placelink {
+.placelink {
   text-decoration: underline;
   font-size: 0.8rem;
 }
 
-.event__placelink a {
+.placelink a {
   font-size: 0.8rem;
 }

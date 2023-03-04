@@ -1,4 +1,4 @@
-import './style.css';
+import style from './style.module.css';
 import brideImage from '../../../../assets/bride.jpg';
 import groomImage from '../../../../assets/groom.jpg';
 import igLogo from '../../../../assets/icon/ig.svg';
@@ -24,49 +24,49 @@ const GroomBride = () => {
       }}
     >
       <div>
-        <div className='bride row around-xs'>
-          <div className='content col-6'>
-            <p className='name'>{Bride.name}</p>
-            <p className='childOf'>Putri dari:</p>
+        <div className={`${style.bride} row around-xs`}>
+          <div className={`${style.content} col-6`}>
+            <p className={style.name}>{Bride.name}</p>
+            <p className={style.childOf}>Putri dari:</p>
             <p>{Bride.parents}</p>
             <p>
-              <img src={igLogo} alt='' className='logo' />
+              <img src={igLogo} alt='ig logo' className={style.logo} />
               <a href={Bride.ig}>@username</a>
             </p>
           </div>
           <div className='col-6'>
-            <div className='personWrapper'>
-              <div className='personBg bride'>
-                <p className='personTitle'> The Bride</p>
+            <div className={style.personWrapper}>
+              <div className={`${style.personBg} ${style.bride}`}>
+                <p className={style.personTitle}> The Bride</p>
               </div>
-              <div className='imageFrame'>
-                <div className='imageWrapper'>
-                  <img src={brideImage} alt='' />
+              <div className={style.imageFrame}>
+                <div className={style.imageWrapper}>
+                  <img src={brideImage} alt='bride' />
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className='groom row around-xs'>
+        <div className={`${style.groom} row around-xs`}>
           <div className='col-6'>
-            <div className='personWrapper'>
-              <div className='personBg groom'>
-                <p className='personTitle'> The Groom</p>
+            <div className={style.personWrapper}>
+              <div className={`${style.personBg} ${style.groom}`}>
+                <p className={style.personTitle}> The Groom</p>
               </div>
-              <div className='imageFrame'>
-                <div className='imageWrapper'>
-                  <img src={groomImage} alt='' />
+              <div className={style.imageFrame}>
+                <div className={style.imageWrapper}>
+                  <img src={groomImage} alt='groom' />
                 </div>
               </div>
             </div>
           </div>
-          <div className='content col-6'>
-            <p className='name'>{Groom.name}</p>
-            <p className='childOf'>Putra dari:</p>
+          <div className={`${style.content} col-6`}>
+            <p className={style.name}>{Groom.name}</p>
+            <p className={style.childOf}>Putra dari:</p>
             <p>{Groom.parents}</p>
             <p>
-              <img src={igLogo} alt='' className='logo' />
+              <img src={igLogo} alt='ig logo' className={style.logo} />
               <a href={Groom.ig}>@username</a>
             </p>
           </div>

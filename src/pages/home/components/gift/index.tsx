@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './style.css';
+import style from './style.module.css';
 import copyIcon from '../../../../assets/icon/copy.svg';
 
 const Gift = () => {
@@ -13,12 +13,12 @@ const Gift = () => {
   return (
     <div className='gift'>
       <div className='container'>
-        <h2 className='title'>Kirim Hadiah</h2>
+        <h2 className={style.title}>Kirim Hadiah</h2>
         <div className='row'>
           <div className='col-xs-12 col-md-6'>
             <div className='container'>
               <fieldset onChange={handleGiftListSelected}>
-                <div className='gift-list'>
+                <div className={style.giftList}>
                   <label htmlFor='transfer'>
                     <input
                       type='radio'
@@ -30,7 +30,7 @@ const Gift = () => {
                     BANK TRANSFER
                   </label>
                 </div>
-                <div className='gift-list'>
+                <div className={style.giftList}>
                   <label htmlFor='linkaja'>
                     <input
                       type='radio'
@@ -47,7 +47,7 @@ const Gift = () => {
           </div>
           <div className='col-xs-12 col-md-6'>
             <div className='container'>
-              <div className='placeholder'>
+              <div className={style.placeholder}>
                 {gift == 'transfer' && <BankDescription />}
                 {gift == 'linkaja' && <LinkAjaDescription />}
               </div>
@@ -79,16 +79,16 @@ type BankAccountItemProps = {
 
 const BankAccountItem = ({ account, bank, name }: BankAccountItemProps) => {
   return (
-    <ul className='bank-account-item'>
-      <li className='account'>
+    <ul className={style.bankAccountItem}>
+      <li className={style.account}>
         {account}
         <a
-          className='copy-link'
+          className={style.copyLink}
           onClick={() => {
             navigator.clipboard.writeText(account);
           }}
         >
-          <img src={copyIcon} className='copy-icon' />
+          <img src={copyIcon} className={style.copyIcon} />
         </a>
       </li>
       <li>{bank}</li>

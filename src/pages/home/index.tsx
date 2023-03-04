@@ -12,7 +12,7 @@ import Gift from './components/gift';
 import Story from './components/story';
 
 const Home = () => {
-  const [isCover, setIsCover] = useState(false);
+  const [isCover, setIsCover] = useState(true);
 
   const eventDate = new Date('2023-12-30T01:00:00+07:00');
 

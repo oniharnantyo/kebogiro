@@ -14,8 +14,9 @@
 }
 
 .year {
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-family: 'Libre Baskerville', serif;
+  font-weight: bolder;
 }
 
 .image {
@@ -24,7 +25,7 @@
   object-fit: cover;
 }
 
-.vertical-divider {
+.verticalDivider {
   display: block;
   width: 1px;
   height: 80px;
@@ -32,25 +33,25 @@
   background-color: #3c6255;
 }
 
-.vertical-divider.bottom {
+.verticalDivider.bottom {
   margin: 2rem auto 0;
 }
 
-.nav-container {
+.navContainer {
   position: absolute;
   right: 0;
   display: flex;
   gap: 0.5rem;
 }
 
-.nav-button {
+.navButton {
   font-size: 1rem;
   border-radius: 50% !important;
   padding: 0.45rem 1rem;
 }
 
 @media screen and (max-width: 600px) {
-  .vertical-divider.top {
+  .verticalDivider.top {
     margin-top: 1rem;
   }
 }

@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react';
-import './style.css';
+import style from './style.module.css';
 import IGreeting from '../../../../models/greeting';
 import { addGreeting, fetchGreetings } from '../../../../services/greetings';
 import { Form, Field } from 'react-final-form';
@@ -66,8 +66,8 @@ const Greeting = () => {
   }, [isNewGreeting]);
 
   return (
-    <div className='container greeting'>
-      <h2 className='title'>Pesan & Ucapan</h2>
+    <div className={`container ${style.greeting}`}>
+      <h2 className={style.title}>Pesan & Ucapan</h2>
       <div className='row'>
         <div className='col-md-offset-1' />
         <div className='col-xs'>
@@ -137,7 +137,7 @@ const Greeting = () => {
         </div>
         <div className='col-md-offset-1' />
       </div>
-      <div className='row greetings'>
+      <div className={`row ${style.greetings}`}>
         <div className='col-md-offset-1' />
         <div className='col-xs'>
           <div className='container'>
@@ -174,12 +174,12 @@ const GreetingItem: greetingProps = ({ name, greet }) => {
     <>
       <div className='row'>
         <div className='col-xs-12'>
-          <p className='greeting-items__name'>{name}</p>
+          <p className={style.name}>{name}</p>
         </div>
       </div>
       <div className='row'>
         <div className='col-xs-12'>
-          <p className='greeting-items__greet'>{greet}</p>
+          <p className={style.greet}>{greet}</p>
         </div>
       </div>
     </>

@@ -5,7 +5,7 @@ import gallery7Image from '../../../../assets/gallery/7.jpeg';
 import gallery3Image from '../../../../assets/gallery/3.jpg';
 import gallery5Image from '../../../../assets/gallery/5.jpeg';
 import gallery2Image from '../../../../assets/gallery/2.jpg';
-import './style.css';
+import style from './style.module.css';
 
 const images = [
   gallery4Image,
@@ -20,14 +20,14 @@ const images = [
 const Gallery = () => {
   return (
     <section className='container'>
-      <div className='row head center-xs'>
+      <div className={`row ${style.head} center-xs`}>
         <div className='col-xs-12 col-md-6'>
           <img src={gallery5Image} alt='' />
         </div>
         <div className='col-xs-12 col-md-6'>
           <div style={{ height: '100%' }} className='row middle-xs center-xs'>
             <div className='row middle-xs center-xs'>
-              <span className='vertical-divider top'></span>
+              <span className={`${style.verticalDivider} ${style.top}`}></span>
               <div className='col-xs-12'>
                 <p className='quote'>
                   “Bila dalam perjalanan hidupmu, <br />
@@ -38,7 +38,7 @@ const Gallery = () => {
                 </p>
                 <p className='quote'>Dhammapada XXIII – 328</p>
               </div>
-              <span className='vertical-divider bottom'></span>
+              <span className={`${style.verticalDivider} ${style.bottom}`}></span>
             </div>
           </div>
         </div>
