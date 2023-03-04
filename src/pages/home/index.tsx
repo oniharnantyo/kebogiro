@@ -13,6 +13,7 @@ import Story from './components/story';
 
 const Home = () => {
   const [isCover, setIsCover] = useState(true);
+  const searchParams = new URLSearchParams(document.location.search);
 
   const eventDate = new Date('2023-12-30T01:00:00+07:00');
 
@@ -35,7 +36,7 @@ const Home = () => {
 
   return (
     <div className='home'>
-      <Cover isCover={isCover} setIsCover={setIsCover} />
+      <Cover isCover={isCover} setIsCover={setIsCover} to={searchParams.get('to') as string} />
       <div className={isCover ? 'hasCover' : ''}>
         <GroomBride />
         <Story />
