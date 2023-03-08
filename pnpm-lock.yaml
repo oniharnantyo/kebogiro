@@ -29,6 +29,7 @@ specifiers:
   react-dom: ^18.2.0
   react-final-form: ^6.5.9
   react-owl-carousel: ^2.3.3
+  sal.js: ^0.8.5
   sass: ^1.57.1
   typescript: '*'
   uuid: ^9.0.0
@@ -48,6 +49,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-final-form: 6.5.9_zunk57bvr2t5bgdbaxawch3xh4
   react-owl-carousel: 2.3.3_jquery@3.6.3+react@18.2.0
+  sal.js: 0.8.5
   sass: 1.57.1
   uuid: 9.0.0
 
@@ -2870,6 +2872,11 @@ packages:
       get-intrinsic: 1.2.0
       is-regex: 1.1.4
     dev: true
+
+  /sal.js/0.8.5:
+    resolution: {integrity: sha512-KUb3fNrVZ1oWxxkEAfQfQ4Mrd910yboIRHqsvioBkulQInqMVeSMah+J5f7ch7KXFLicKlAaE0TzTsG/eJ02Dg==}
+    engines: {node: '>=12.0.0'}
+    dev: false
 
   /sass/1.57.1:
     resolution: {integrity: sha512-O2+LwLS79op7GI0xZ8fqzF7X2m/m8WFfI02dHOdsK5R2ECeS5F62zrwg/relM1rjSLy7Vd/DiMNIvPrQGsA0jw==}

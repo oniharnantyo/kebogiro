@@ -1,9 +1,5 @@
 .countdown {
-  height: 350px;
   width: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .date {
@@ -20,10 +16,10 @@
   padding: 0.5rem 0.1rem;
 }
 
-.counter__item {
+.counterItem {
   font-size: 1.5rem;
 }
 
-.counter__label {
+.counterLabel {
   font-size: 1rem;
 }

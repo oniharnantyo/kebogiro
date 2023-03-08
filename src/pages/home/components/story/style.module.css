@@ -1,5 +1,5 @@
 .story {
-  padding: 4rem 0 4rem 0;
+  padding: 3rem 0 4rem 0;
   background-color: #A6BB8D;
 }
 
@@ -17,6 +17,10 @@
   font-size: 1.3rem;
   font-family: 'Libre Baskerville', serif;
   font-weight: bolder;
+}
+
+.description {
+  word-wrap: break-word;
 }
 
 .image {

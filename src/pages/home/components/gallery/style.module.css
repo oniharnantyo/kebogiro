@@ -2,6 +2,12 @@
   margin-bottom: 3rem;
 }
 
+.singleGallery {
+  object-fit: cover;
+  height: 730px;
+  width: 100%;
+}
+
 .quote {
   font-style: italic;
   font-weight: 3 00;

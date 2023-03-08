@@ -1,32 +1,65 @@
-import gallery4Image from '../../../../assets/gallery/4.jpeg';
-import gallery1Image from '../../../../assets/gallery/1.jpg';
-import gallery8Image from '../../../../assets/gallery/8.jpg';
-import gallery7Image from '../../../../assets/gallery/7.jpeg';
-import gallery3Image from '../../../../assets/gallery/3.jpg';
-import gallery5Image from '../../../../assets/gallery/5.jpeg';
-import gallery2Image from '../../../../assets/gallery/2.jpg';
+import pantai1Image from '../../../../assets/gallery/pantai1.webp';
+import pantai2Image from '../../../../assets/gallery/pantai2.webp';
+import pantai3Image from '../../../../assets/gallery/pantai3.webp';
+import pantai4Image from '../../../../assets/gallery/pantai4.webp';
+import pantai5Image from '../../../../assets/gallery/pantai5.webp';
+import pantai6Image from '../../../../assets/gallery/pantai6.webp';
+import vihara1Image from '../../../../assets/gallery/vihara1.webp';
+import vihara2Image from '../../../../assets/gallery/vihara2.webp';
+import vihara3Image from '../../../../assets/gallery/vihara3.webp';
+import vihara4Image from '../../../../assets/gallery/vihara4.webp';
+import vihara5Image from '../../../../assets/gallery/vihara5.webp';
+import vihara6Image from '../../../../assets/gallery/vihara6.webp';
+import vihara7Image from '../../../../assets/gallery/vihara7.webp';
+import gallerySingle from '../../../../assets/gallery/gallery-single.webp';
+
 import style from './style.module.css';
+import { useEffect } from 'react';
+import sal from 'sal.js';
 
 const images = [
-  gallery4Image,
-  gallery1Image,
-  gallery8Image,
-  gallery7Image,
-  gallery3Image,
-  gallery5Image,
-  gallery2Image,
+  pantai1Image,
+  pantai2Image,
+  pantai3Image,
+  pantai4Image,
+  pantai5Image,
+  pantai6Image,
+  vihara1Image,
+  vihara2Image,
+  vihara3Image,
+  vihara4Image,
+  vihara7Image,
+  vihara5Image,
+  vihara6Image,
 ];
 
 const Gallery = () => {
+  useEffect(() => {
+    sal();
+  }, []);
+
   return (
-    <section className='container'>
-      <div className={`row ${style.head} center-xs`}>
+    <section>
+      <div className={`row ${style.head} center-xs container`}>
         <div className='col-xs-12 col-md-6'>
-          <img src={gallery5Image} alt='' />
+          <img
+            src={gallerySingle}
+            alt='gallery single'
+            className={style.singleGallery}
+            data-sal='flip-up'
+            data-sal-duration={700}
+            data-sal-easing='ease-out-quad'
+          />
         </div>
         <div className='col-xs-12 col-md-6'>
           <div style={{ height: '100%' }} className='row middle-xs center-xs'>
-            <div className='row middle-xs center-xs'>
+            <div
+              className='row middle-xs center-xs'
+              data-sal='fade'
+              data-sal-duration={700}
+              data-sal-delay={300}
+              data-sal-easing='ease-out-quad'
+            >
               <span className={`${style.verticalDivider} ${style.top}`}></span>
               <div className='col-xs-12'>
                 <p className='quote'>
@@ -47,8 +80,15 @@ const Gallery = () => {
         <div className='col-xs-12'>
           <div className='flexbin'>
             {images.map((image, i) => (
-              <a key={i} href={image}>
-                <img src={image} loading='lazy' />
+              <a
+                key={i}
+                href={image}
+                data-sal='flip-left'
+                data-sal-duration={700}
+                data-sal-delay={i * 2000}
+                data-sal-easing='ease-out-quad'
+              >
+                <img src={image} alt='gallery' loading='lazy' />
               </a>
             ))}
           </div>

@@ -1,7 +1,6 @@
 import { formatDate } from '../../../../libs/dayjs';
-import countdownImage from '../../../../assets/countdown.jpg';
 import { FC, useEffect, useState } from 'react';
-import './style.css';
+import style from './style.module.css';
 
 interface ICountdownProps {
   date: Date;
@@ -28,51 +27,27 @@ const Countdown: CountdownProps = ({ date }) => {
   const { days, hours, minutes, seconds } = parseCountdown(countDown);
 
   return (
-    <div
-      className='countdown'
-      style={{
-        backgroundImage: `url(${countdownImage})`,
-        position: 'relative',
-      }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          position: 'absolute',
-          alignItems: 'center',
-          justifyContent: 'center',
-          inset: '0px',
-          overflow: 'hidden',
-        }}
-      >
-        <div
-          className='container'
-          style={{
-            position: 'relative',
-          }}
-        >
-          <div className='row center-xs'>
-            <div className='col xs-12'>
-              <h2 className='date'>{formatedTime}</h2>
-            </div>
-          </div>
-          <div className='row around-xs center-xs'>
-            <div className='col-md-offset-2' />
-            <div className='col-xs'>
-              <CounterItem num={days} label='Hari'></CounterItem>
-            </div>
-            <div className='col-xs'>
-              <CounterItem num={hours} label='Jam'></CounterItem>
-            </div>
-            <div className='col-xs'>
-              <CounterItem num={minutes} label='Menit'></CounterItem>
-            </div>
-            <div className='col-xs'>
-              <CounterItem num={seconds} label='Detik'></CounterItem>
-            </div>
-            <div className='col-md-offset-2' />
-          </div>
+    <div>
+      <div className='row center-xs'>
+        <div className='col xs-12'>
+          <h2 className={style.date}>{formatedTime}</h2>
         </div>
+      </div>
+      <div className='row around-xs center-xs'>
+        <div className='col-md-offset-2' />
+        <div className='col-xs'>
+          <CounterItem num={days} label='Hari'></CounterItem>
+        </div>
+        <div className='col-xs'>
+          <CounterItem num={hours} label='Jam'></CounterItem>
+        </div>
+        <div className='col-xs'>
+          <CounterItem num={minutes} label='Menit'></CounterItem>
+        </div>
+        <div className='col-xs'>
+          <CounterItem num={seconds} label='Detik'></CounterItem>
+        </div>
+        <div className='col-md-offset-2' />
       </div>
     </div>
   );
@@ -96,9 +71,12 @@ type CounterItemProps = {
 
 const CounterItem = ({ num, label }: CounterItemProps) => {
   return (
-    <div className='counter' style={{ display: 'flex', flexDirection: 'column', rowGap: '5px' }}>
-      <span className='counter__item'>{num}</span>
-      <span className='counter__label'>{label}</span>
+    <div
+      className={style.counter}
+      style={{ display: 'flex', flexDirection: 'column', rowGap: '5px' }}
+    >
+      <span className={style.counterItem}>{num}</span>
+      <span className={style.counterLabel}>{label}</span>
     </div>
   );
 };

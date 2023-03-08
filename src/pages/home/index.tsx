@@ -41,8 +41,7 @@ const Home = () => {
         <GroomBride />
         <Story />
         <Gallery />
-        <Countdown date={eventDate}></Countdown>
-        <Event events={events}></Event>
+        <Event date={eventDate} events={events}></Event>
         <Gift />
         <Greeting />
         <Footer />
