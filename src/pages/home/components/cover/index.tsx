@@ -29,7 +29,7 @@ const Cover = (props: CoverProps) => {
           <h1
             className={`${style.text} ${style.title}`}
             data-sal='zoom-in'
-            data-sal-duration={1000}
+            data-sal-duration={700}
             data-sal-easing='ease-out-quad'
           >
             Metta & Oni
@@ -50,8 +50,8 @@ const Cover = (props: CoverProps) => {
             <div
               className='col-xs-10 col-md-4'
               data-sal='fade'
-              data-sal-delay={1000}
-              data-sal-duration={1000}
+              data-sal-delay={500}
+              data-sal-duration={700}
               data-sal-easing='ease-out-quad'
             >
               <div className={style.to}>
@@ -72,8 +72,8 @@ const Cover = (props: CoverProps) => {
           <div className='row center-xs'>
             <div
               data-sal='slide-up'
-              data-sal-delay={1000}
-              data-sal-duration={1000}
+              data-sal-delay={500}
+              data-sal-duration={700}
               data-sal-easing='ease-out-quad'
             >
               <a href='#' role='button' onClick={handleIsCover}>

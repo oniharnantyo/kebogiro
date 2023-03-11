@@ -37,16 +37,16 @@ const Home = () => {
   const events: IEvent[] = [
     {
       title: 'Pemberkahan Pernikahan',
-      startDate: new Date('2023-12-30T09:00:00+07:00'),
-      endDate: new Date('2023-12-30T11:00:00+07:00'),
-      place: 'Tempat Ibadah\nJalan Solo KM 7',
-      placeLink: 'https://goo.gl/maps/zpJbGtXMjQp9fbAc9',
+      startDate: new Date('2023-06-01T09:00:00+07:00'),
+      endDate: new Date('2023-06-01T11:00:00+07:00'),
+      place: `Vihara Dharma Sagara\nNgalarangan, Tleter, Kaloran, Temanggung`,
+      placeLink: 'https://goo.gl/maps/hztx2ELCuWEdQp9WA',
     },
     {
       title: 'Resepsi',
-      startDate: new Date('2023-12-30T16:00:00+07:00'),
-      endDate: new Date('2023-12-30T13:00:00+07:00'),
-      place: 'Hotel Royal Ambarukmo\nJalan Solo KM 7',
+      startDate: new Date('2023-06-01T15:00:00+07:00'),
+      endDate: new Date('2023-06-01T17:00:00+07:00'),
+      place: 'RT 5 / RW 2 Nglarangan, Tleter, Kaloran, Temanggung',
       placeLink: 'https://goo.gl/maps/zpJbGtXMjQp9fbAc9',
     },
   ];

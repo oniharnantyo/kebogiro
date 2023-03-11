@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import style from './style.module.css';
 import copyIcon from '../../../../assets/icon/copy.svg';
+import sal from 'sal.js';
 
 const Gift = () => {
   const [gift, setGift] = useState('transfer');
@@ -10,12 +11,29 @@ const Gift = () => {
     setGift(val);
   };
 
+  useEffect(() => {
+    sal();
+  }, []);
+
   return (
     <div className='gift'>
       <div className='container'>
-        <h2 className={style.title}>Kirim Hadiah</h2>
-        <div className='row'>
-          <div className='col-xs-12 col-md-6'>
+        <h2
+          className={style.title}
+          data-sal='slide-down'
+          data-sal-duration={500}
+          data-sal-easing='ease-out-quad'
+        >
+          Kirim Hadiah
+        </h2>
+        <div
+          className='row'
+          data-sal='slide-up'
+          data-sal-duration={500}
+          data-sal-easing='ease-out-quad'
+        >
+          <div className='col-md-offset-1' />
+          <div className='col-xs-12 col-md-5'>
             <div className='container'>
               <fieldset onChange={handleGiftListSelected}>
                 <div className={style.giftList}>
@@ -45,7 +63,7 @@ const Gift = () => {
               </fieldset>
             </div>
           </div>
-          <div className='col-xs-12 col-md-6'>
+          <div className='col-xs-12 col-md-5'>
             <div className='container'>
               <div className={style.placeholder}>
                 {gift == 'transfer' && <BankDescription />}
@@ -53,6 +71,7 @@ const Gift = () => {
               </div>
             </div>
           </div>
+          <div className='col-md-offset-1' />
         </div>
       </div>
     </div>

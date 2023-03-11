@@ -3,7 +3,6 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 import { FC, useEffect } from 'react';
-import story1Image from '../../../../assets/story/1.webp';
 import story2Image from '../../../../assets/story/2.webp';
 import story3Image from '../../../../assets/story/3.webp';
 import story4Image from '../../../../assets/story/4.webp';
@@ -21,7 +20,7 @@ const Story = () => {
         <h2
           className={style.title}
           data-sal='slide-up'
-          data-sal-duration={1000}
+          data-sal-duration={500}
           data-sal-easing='ease-out-quad'
         >
           Perjalanan Kami
@@ -39,7 +38,7 @@ const Story = () => {
           navContainerClass={style.navContainer}
           navClass={[`outline ${style.navButton}`, `outline ${style.navButton}`]}
           data-sal='slide-up'
-          data-sal-duration={700}
+          data-sal-duration={500}
           data-sal-delay={200}
           data-sal-easing='ease-out-quad'
         >

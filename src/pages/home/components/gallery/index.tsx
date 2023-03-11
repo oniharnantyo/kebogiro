@@ -47,7 +47,7 @@ const Gallery = () => {
             alt='gallery single'
             className={style.singleGallery}
             data-sal='flip-up'
-            data-sal-duration={700}
+            data-sal-duration={500}
             data-sal-easing='ease-out-quad'
           />
         </div>
@@ -56,7 +56,7 @@ const Gallery = () => {
             <div
               className='row middle-xs center-xs'
               data-sal='fade'
-              data-sal-duration={700}
+              data-sal-duration={500}
               data-sal-delay={300}
               data-sal-easing='ease-out-quad'
             >
@@ -84,8 +84,8 @@ const Gallery = () => {
                 key={i}
                 href={image}
                 data-sal='flip-left'
-                data-sal-duration={700}
-                data-sal-delay={i * 2000}
+                data-sal-duration={500}
+                data-sal-delay={i * 1000}
                 data-sal-easing='ease-out-quad'
               >
                 <img src={image} alt='gallery' loading='lazy' />

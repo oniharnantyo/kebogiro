@@ -3,6 +3,7 @@ import style from './style.module.css';
 import IGreeting from '../../../../models/greeting';
 import { addGreeting, fetchGreetings } from '../../../../services/greetings';
 import { Form, Field } from 'react-final-form';
+import sal from 'sal.js';
 
 interface Values {
   name: string;
@@ -61,13 +62,21 @@ const Greeting = () => {
   };
 
   useEffect(() => {
+    sal();
     getGreetingsData();
     setIsNewGreeting(false);
   }, [isNewGreeting]);
 
   return (
     <div className={`container ${style.greeting}`}>
-      <h2 className={style.title}>Pesan & Ucapan</h2>
+      <h2
+        className={style.title}
+        data-sal='slide-down'
+        data-sal-duration={500}
+        data-sal-easing='ease-out-quad'
+      >
+        Pesan & Ucapan
+      </h2>
       <div className='row'>
         <div className='col-md-offset-1' />
         <div className='col-xs'>

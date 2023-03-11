@@ -35,7 +35,7 @@ const GroomBride = () => {
         <div
           className={`${style.content} col-6`}
           data-sal='slide-down'
-          data-sal-duration={700}
+          data-sal-duration={500}
           data-sal-easing='ease-out-quad'
         >
           <p className={style.name}>{Bride.name}</p>
@@ -91,7 +91,7 @@ const GroomBride = () => {
         <div
           className={`${style.content} col-6`}
           data-sal='slide-up'
-          data-sal-duration={700}
+          data-sal-duration={500}
           data-sal-easing='ease-out-quad'
         >
           <p className={style.name}>{Groom.name}</p>

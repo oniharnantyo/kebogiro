@@ -1,12 +1,12 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import IEvent from '../../../../models/event';
 import style from './style.module.css';
 import { formatDate } from '../../../../libs/dayjs';
 import Countdown from '../countdown';
 import eventBackgroundImage from '../../../../assets/event-background.webp';
-import event1Image from '../../../../assets/event1.webp';
 import event2Image from '../../../../assets/event2.webp';
 import event3Image from '../../../../assets/event3.webp';
+import sal from 'sal.js';
 
 interface IEventProps {
   date: Date;
@@ -16,6 +16,10 @@ interface IEventProps {
 type EventProps = FC<IEventProps>;
 
 const Event: EventProps = ({ date, events }) => {
+  useEffect(() => {
+    sal();
+  }, []);
+
   return (
     <section>
       <div
@@ -33,10 +37,21 @@ const Event: EventProps = ({ date, events }) => {
           <div className='row'>
             <div className='col-xs-12 col-md-6'>
               <div className={style.collageWrapper}>
-                <div className={`${style.photoWrapper} ${style.first}`}>
+                <div
+                  className={`${style.photoWrapper} ${style.first}`}
+                  data-sal='slide-right'
+                  data-sal-duration={500}
+                  data-sal-easing='ease-out-quad'
+                >
                   <img src={event2Image} alt='' className={`${style.photo} ${style.first}`} />
                 </div>
-                <div className={`${style.photoWrapper} ${style.second}`}>
+                <div
+                  className={`${style.photoWrapper} ${style.second}`}
+                  data-sal='slide-down'
+                  data-sal-duration={300}
+                  data-sal-delay={100}
+                  data-sal-easing='ease-out-quad'
+                >
                   <img src={event3Image} alt='' className={`${style.photo} ${style.second}`} />
                 </div>
               </div>
@@ -49,25 +64,31 @@ const Event: EventProps = ({ date, events }) => {
                   rowGap: '2rem',
                 }}
               >
-                {events.map((e) => (
-                  <div className='row'>
+                {events.map((event, i) => (
+                  <div
+                    className='row'
+                    data-sal='slide-left'
+                    data-sal-duration={500}
+                    data-sal-delay={i * 2000}
+                    data-sal-easing='ease-out-quad'
+                  >
                     <div
                       className='col-xs-12'
                       style={{
                         marginBottom: '0.5rem',
                       }}
                     >
-                      <span className={style.title}>{e.title}</span>
+                      <span className={style.title}>{event.title}</span>
                     </div>
                     <div className='col-xs-12'>
                       <span className={style.content}>
-                        {formatDate(e.startDate, 'dddd, D MMMM YYYY')}
+                        {formatDate(event.startDate, 'dddd, D MMMM YYYY')}
                       </span>
                     </div>
                     <div className='col-xs-12'>
                       <span className={style.content}>
-                        {formatDate(e.startDate, 'HH:mm')} WIB -{' '}
-                        {e.endDate && formatDate(e.endDate, 'HH:mm')} WIB
+                        {formatDate(event.startDate, 'HH:mm')} WIB -{' '}
+                        {event.endDate && formatDate(event.endDate, 'HH:mm')} WIB
                       </span>
                     </div>
                     <div
@@ -76,8 +97,8 @@ const Event: EventProps = ({ date, events }) => {
                         marginTop: '0.5rem',
                       }}
                     >
-                      <a href={e.placeLink} className={style.placelink}>
-                        {e.place}
+                      <a href={event.placeLink} className={style.placelink}>
+                        {event.place}
                       </a>
                     </div>
                   </div>

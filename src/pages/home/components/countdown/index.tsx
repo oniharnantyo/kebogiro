@@ -1,6 +1,7 @@
 import { formatDate } from '../../../../libs/dayjs';
 import { FC, useEffect, useState } from 'react';
 import style from './style.module.css';
+import sal from 'sal.js';
 
 interface ICountdownProps {
   date: Date;
@@ -16,13 +17,15 @@ const Countdown: CountdownProps = ({ date }) => {
   const [countDown, setCountDown] = useState(timestamp - new Date().getTime());
 
   useEffect(() => {
+    sal();
+
     const interval = setInterval(() => {
       const timeLeft = timestamp - new Date().getTime();
       setCountDown(timeLeft);
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [timestamp]);
+  }, []);
 
   const { days, hours, minutes, seconds } = parseCountdown(countDown);
 
@@ -30,10 +33,23 @@ const Countdown: CountdownProps = ({ date }) => {
     <div>
       <div className='row center-xs'>
         <div className='col xs-12'>
-          <h2 className={style.date}>{formatedTime}</h2>
+          <h2
+            className={style.date}
+            data-sal='slide-down'
+            data-sal-duration={1000}
+            data-sal-easing='ease-out-quad'
+          >
+            {formatedTime}
+          </h2>
         </div>
       </div>
-      <div className='row around-xs center-xs'>
+      <div
+        className='row around-xs center-xs'
+        data-sal='fade'
+        data-sal-delay={300}
+        data-sal-duration={1000}
+        data-sal-easing='ease-out-quad'
+      >
         <div className='col-md-offset-2' />
         <div className='col-xs'>
           <CounterItem num={days} label='Hari'></CounterItem>
