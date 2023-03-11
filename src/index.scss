@@ -1,6 +1,13 @@
+// Phone, small screen devices
+$flexbin-phone-max: 400px;
+$flexbin-row-height-phone: 150px;
+$flexbin-space-phone: 4px;
+
 @import '@picocss/pico/scss/pico';
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import 'sal.js/src/sal.scss';
+@import 'flexboxgrid/css/flexboxgrid.min.css';
+@import 'flexbin/flexbin.scss';
 
 [data-theme='light'],
 :root:not([data-theme='dark']) {

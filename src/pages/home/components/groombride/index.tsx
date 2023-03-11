@@ -31,80 +31,78 @@ const GroomBride = () => {
         padding: '4rem 2rem',
       }}
     >
-      <div>
-        <div className={`${style.bride} row around-xs`}>
-          <div
-            className={`${style.content} col-6`}
-            data-sal='slide-down'
-            data-sal-duration={700}
-            data-sal-easing='ease-out-quad'
-          >
-            <p className={style.name}>{Bride.name}</p>
-            <p className={style.childOf}>Putri dari:</p>
-            <p>{Bride.parents}</p>
-            <p>
-              <img
-                src={igLogo}
-                alt='ig logo'
-                className={style.logo}
-                data-sal='slide-left'
-                data-sal-duration={500}
-                data-sal-easing='ease-out-quad'
-              />
-              <a href={Bride.igLink} target='_blank'>
-                {Bride.ig}
-              </a>
-            </p>
-          </div>
-          <div className='col-6'>
-            <div className={style.personWrapper}>
-              <div className={`${style.personBg} ${style.bride}`}>
-                <p className={style.personTitle}> The Bride</p>
-              </div>
-              <div className={style.imageFrame}>
-                <div className={style.imageWrapper}>
-                  <img src={brideImage} alt='bride' />
-                </div>
+      <div className={`${style.bride} row around-xs`}>
+        <div
+          className={`${style.content} col-6`}
+          data-sal='slide-down'
+          data-sal-duration={700}
+          data-sal-easing='ease-out-quad'
+        >
+          <p className={style.name}>{Bride.name}</p>
+          <p className={style.childOf}>Putri dari:</p>
+          <p>{Bride.parents}</p>
+          <p>
+            <img
+              src={igLogo}
+              alt='ig logo'
+              className={style.logo}
+              data-sal='slide-left'
+              data-sal-duration={500}
+              data-sal-easing='ease-out-quad'
+            />
+            <a href={Bride.igLink} target='_blank'>
+              {Bride.ig}
+            </a>
+          </p>
+        </div>
+        <div className='col-6'>
+          <div className={style.personWrapper}>
+            <div className={`${style.personBg} ${style.bride}`}>
+              <p className={style.personTitle}> The Bride</p>
+            </div>
+            <div className={style.imageFrame}>
+              <div className={style.imageWrapper}>
+                <img src={brideImage} alt='bride' />
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className={`${style.groom} row around-xs`}>
-          <div className='col-6'>
-            <div className={style.personWrapper}>
-              <div className={`${style.personBg} ${style.groom}`}>
-                <p className={style.personTitle}> The Groom</p>
-              </div>
-              <div className={style.imageFrame}>
-                <div className={style.imageWrapper}>
-                  <img
-                    src={groomImage}
-                    alt='groom'
-                    data-sal='slide-right'
-                    data-sal-duration={500}
-                    data-sal-easing='ease-out-quad'
-                  />
-                </div>
+      <div className={`${style.groom} row around-xs`}>
+        <div className='col-6'>
+          <div className={style.personWrapper}>
+            <div className={`${style.personBg} ${style.groom}`}>
+              <p className={style.personTitle}> The Groom</p>
+            </div>
+            <div className={style.imageFrame}>
+              <div className={style.imageWrapper}>
+                <img
+                  src={groomImage}
+                  alt='groom'
+                  data-sal='slide-right'
+                  data-sal-duration={500}
+                  data-sal-easing='ease-out-quad'
+                />
               </div>
             </div>
           </div>
-          <div
-            className={`${style.content} col-6`}
-            data-sal='slide-up'
-            data-sal-duration={700}
-            data-sal-easing='ease-out-quad'
-          >
-            <p className={style.name}>{Groom.name}</p>
-            <p className={style.childOf}>Putra dari:</p>
-            <p>{Groom.parents}</p>
-            <p>
-              <img src={igLogo} alt='ig logo' className={style.logo} />
-              <a href={Groom.igLink} target='_blank'>
-                {Groom.ig}
-              </a>
-            </p>
-          </div>
+        </div>
+        <div
+          className={`${style.content} col-6`}
+          data-sal='slide-up'
+          data-sal-duration={700}
+          data-sal-easing='ease-out-quad'
+        >
+          <p className={style.name}>{Groom.name}</p>
+          <p className={style.childOf}>Putra dari:</p>
+          <p>{Groom.parents}</p>
+          <p>
+            <img src={igLogo} alt='ig logo' className={style.logo} />
+            <a href={Groom.igLink} target='_blank'>
+              {Groom.ig}
+            </a>
+          </p>
         </div>
       </div>
     </section>
