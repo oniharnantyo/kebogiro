@@ -7,7 +7,7 @@ import commonjs from '@rollup/plugin-commonjs';
 export default defineConfig({
   plugins: [
     commonjs({
-      include: /node_modules/,
+      exclude: '/node/modules/dayjs',
       requireReturnsDefault: 'auto', // <---- this solves default issue
     }),
     inject({
