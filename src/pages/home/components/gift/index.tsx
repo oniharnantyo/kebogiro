@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import style from './style.module.css';
 import copyIcon from '../../../../assets/icon/copy.svg';
+import linkaja from '../../../../assets/linkaja.jpeg';
 import sal from 'sal.js';
 
 const Gift = () => {
@@ -16,7 +17,7 @@ const Gift = () => {
   }, []);
 
   return (
-    <div className='gift'>
+    <section className={`${style.gift}`} style={{ marginBottom: 0 }}>
       <div className='container'>
         <h2
           className={style.title}
@@ -34,7 +35,13 @@ const Gift = () => {
         >
           <div className='col-md-offset-1' />
           <div className='col-xs-12 col-md-5'>
-            <div className='container'>
+            <div
+              className='container'
+              data-sal='slide-up'
+              data-sal-duration={500}
+              data-sal-delay={200}
+              data-sal-easing='ease-out-quad'
+            >
               <fieldset onChange={handleGiftListSelected}>
                 <div className={style.giftList}>
                   <label htmlFor='transfer'>
@@ -74,7 +81,7 @@ const Gift = () => {
           <div className='col-md-offset-1' />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -83,9 +90,12 @@ export default Gift;
 const BankDescription = () => {
   return (
     <>
-      <BankAccountItem account='123123121' bank='Bank BCA' name='Oni Harnantyo'></BankAccountItem>
-      <BankAccountItem account='123123122' bank='Bank BCA' name='Oni Harnantyo'></BankAccountItem>
-      <BankAccountItem account='123123123' bank='Bank BCA' name='Oni Harnantyo'></BankAccountItem>
+      <BankAccountItem account='6800837519' bank='Bank BCA' name='Oni Harnantyo'></BankAccountItem>
+      <BankAccountItem
+        account='0374036731'
+        bank='Bank BCA'
+        name='Dwiyana Mettasari'
+      ></BankAccountItem>
     </>
   );
 };
@@ -118,5 +128,10 @@ const BankAccountItem = ({ account, bank, name }: BankAccountItemProps) => {
 };
 
 const LinkAjaDescription = () => {
-  return <>bbb</>;
+  return (
+    <div>
+      <img src={linkaja} alt='qr linkaja oni' />
+      <p className={style.linkajaNote}>* Scan menggunakan aplikasi LinkAja</p>
+    </div>
+  );
 };

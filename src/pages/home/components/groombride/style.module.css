@@ -1,3 +1,7 @@
+.groomBride {
+  padding: 4rem 2rem;
+}
+
 .bride {
   margin-bottom: 1rem;
   padding: 1rem 1rem;
@@ -77,6 +81,10 @@
 }
 
 @media (min-width: 768px) {
+  .groomBride {
+    padding: 2rem 2rem;
+  }
+
   .imageWrapper {
     width: 350px;
     height: 350px;

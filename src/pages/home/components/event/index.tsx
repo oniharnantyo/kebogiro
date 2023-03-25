@@ -21,7 +21,7 @@ const Event: EventProps = ({ date, events }) => {
   }, []);
 
   return (
-    <section>
+    <section style={{ marginBottom: 0 }}>
       <div
         className={`${style.event}`}
         style={{
@@ -66,6 +66,7 @@ const Event: EventProps = ({ date, events }) => {
               >
                 {events.map((event, i) => (
                   <div
+                    key={i}
                     className='row'
                     data-sal='slide-left'
                     data-sal-duration={500}

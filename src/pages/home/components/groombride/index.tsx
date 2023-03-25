@@ -25,12 +25,7 @@ const GroomBride = () => {
   }, []);
 
   return (
-    <section
-      className='container'
-      style={{
-        padding: '4rem 2rem',
-      }}
-    >
+    <section className={`container ${style.groomBride}`}>
       <div className={`${style.bride} row around-xs`}>
         <div
           className={`${style.content} col-6`}
@@ -40,7 +35,7 @@ const GroomBride = () => {
         >
           <p className={style.name}>{Bride.name}</p>
           <p className={style.childOf}>Putri dari:</p>
-          <p>{Bride.parents}</p>
+          <p style={{ marginBottom: '5px' }}>{Bride.parents}</p>
           <p>
             <img
               src={igLogo}
@@ -96,7 +91,7 @@ const GroomBride = () => {
         >
           <p className={style.name}>{Groom.name}</p>
           <p className={style.childOf}>Putra dari:</p>
-          <p>{Groom.parents}</p>
+          <p style={{ marginBottom: '5px' }}>{Groom.parents}</p>
           <p>
             <img src={igLogo} alt='ig logo' className={style.logo} />
             <a href={Groom.igLink} target='_blank'>

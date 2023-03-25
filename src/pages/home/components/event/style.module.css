@@ -34,6 +34,7 @@
   text-transform: uppercase;
   font-weight: 300;
   font-size: 0.8rem;
+  word-spacing: 3px;
 }
 
 .placelink {
@@ -83,6 +84,13 @@
   height: 250px;
   width: auto;
 }
+
+@media screen and (max-width: 700px) {
+  .event {
+    background-position: 80% 70%;
+  }
+}
+
 
 @media screen and (min-width: 1000px) {
   .photoWrapper.second {

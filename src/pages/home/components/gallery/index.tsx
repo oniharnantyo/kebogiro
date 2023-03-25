@@ -11,6 +11,10 @@ import vihara4Image from '../../../../assets/gallery/vihara4.webp';
 import vihara5Image from '../../../../assets/gallery/vihara5.webp';
 import vihara6Image from '../../../../assets/gallery/vihara6.webp';
 import vihara7Image from '../../../../assets/gallery/vihara7.webp';
+import pasar2Image from '../../../../assets/gallery/pasar2.webp';
+import pasar3Image from '../../../../assets/gallery/pasar3.webp';
+import pasar4Image from '../../../../assets/gallery/pasar4.webp';
+import pasar5Image from '../../../../assets/gallery/pasar5.webp';
 import gallerySingle from '../../../../assets/gallery/gallery-single.webp';
 
 import style from './style.module.css';
@@ -31,6 +35,10 @@ const images = [
   vihara7Image,
   vihara5Image,
   vihara6Image,
+  pasar2Image,
+  pasar3Image,
+  pasar4Image,
+  pasar5Image,
 ];
 
 const Gallery = () => {

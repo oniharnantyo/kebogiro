@@ -1,7 +1,13 @@
 import style from './style.module.css';
 import footerImage from '../../../../assets/footer.webp';
+import sal from 'sal.js';
+import { useEffect } from 'react';
 
 const footer = () => {
+  useEffect(() => {
+    sal();
+  }, []);
+
   return (
     <section style={{ marginBottom: 0 }}>
       <div
@@ -10,7 +16,12 @@ const footer = () => {
           backgroundImage: `url(${footerImage})`,
         }}
       >
-        <div className='container'>
+        <div
+          className='container'
+          data-sal='fade'
+          data-sal-duration={500}
+          data-sal-easing='ease-out-quad'
+        >
           <div className='row center-xs' style={{ height: '100%' }}>
             <div className='col-sm-offset-6' />
             <div className='col-xs-12 col-sm-6'>

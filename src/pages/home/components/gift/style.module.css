@@ -12,7 +12,7 @@
 .placeholder {
   background-color: #EAE7B1;
   padding: 2rem 1.5rem;
-  min-height: 400px;
+  min-height: 300px;
 }
 
 .giftList {
@@ -38,4 +38,9 @@
   overflow: visible;
   vertical-align: -0.15em;
   margin-left: 5px;
+}
+
+.linkajaNote {
+  font-size: 0.7rem;
+  color: red;
 }

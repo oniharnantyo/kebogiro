@@ -68,7 +68,7 @@ const Greeting = () => {
   }, [isNewGreeting]);
 
   return (
-    <div className={`container ${style.greeting}`}>
+    <section className={`container ${style.greeting}`}>
       <h2
         className={style.title}
         data-sal='slide-down'
@@ -80,7 +80,13 @@ const Greeting = () => {
       <div className='row'>
         <div className='col-md-offset-1' />
         <div className='col-xs'>
-          <div className='container'>
+          <div
+            className='container'
+            data-sal='slide-up'
+            data-sal-duration={500}
+            data-sal-delay={200}
+            data-sal-easing='ease-out-quad'
+          >
             <Form
               onSubmit={onSubmit}
               validate={(values) => {
@@ -149,10 +155,17 @@ const Greeting = () => {
       <div className={`row ${style.greetings}`}>
         <div className='col-md-offset-1' />
         <div className='col-xs'>
-          <div className='container'>
+          <div
+            className='container'
+            data-sal='slide-up'
+            data-sal-duration={500}
+            data-sal-delay={400}
+            data-sal-easing='ease-out-quad'
+          >
             <div>
-              {greetings.map((greeting) => (
+              {greetings.map((greeting, index) => (
                 <GreetingItem
+                  key={index}
                   name={greeting.name}
                   greet={greeting.greet}
                   createdAt={greeting.createdAt}
@@ -170,7 +183,7 @@ const Greeting = () => {
         </div>
         <div className='col-md-offset-1' />
       </div>
-    </div>
+    </section>
   );
 };
 
