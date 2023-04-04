@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import style from './style.module.css';
 import copyIcon from '../../../../assets/icon/copy.svg';
-import linkaja from '../../../../assets/linkaja.jpeg';
+import linkaja from '../../../../assets/linkaja.webp';
 import sal from 'sal.js';
 
 const Gift = () => {

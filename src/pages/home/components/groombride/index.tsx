@@ -1,5 +1,5 @@
 import style from './style.module.css';
-import brideImage from '../../../../assets/bride.jpg';
+import brideImage from '../../../../assets/bride.webp';
 import groomImage from '../../../../assets/groom.webp';
 import igLogo from '../../../../assets/icon/ig.svg';
 import { useEffect } from 'react';

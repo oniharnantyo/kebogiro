@@ -1,16 +1,11 @@
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import React from 'react';
 import style from './index.module.css';
-import useSound from 'use-sound';
-import Lottie from 'lottie-react';
 
 import IEvent from '../../models/event';
 
-import TemaniAkuSong from '../../assets/music/Sheila on 7 - Temani Aku.mp3';
-import playIcon from '../../assets/icon/vinyl.svg';
-import melodyAnimation from '../../assets/lottie/melody.json';
+import Cover from './components/cover';
 
-const Cover = React.lazy(() => import('./components/cover'));
 const GroomBride = React.lazy(() => import('./components/groombride'));
 const Footer = React.lazy(() => import('./components/footer'));
 const Gallery = React.lazy(() => import('./components/gallery'));
@@ -18,21 +13,21 @@ const Event = React.lazy(() => import('./components/event'));
 const Greeting = React.lazy(() => import('./components/greeting'));
 const Gift = React.lazy(() => import('./components/gift'));
 const Story = React.lazy(() => import('./components/story'));
+const Music = React.lazy(() => import('./components/music'));
 
 const Home = () => {
   const searchParams = new URLSearchParams(document.location.search);
 
   const [isCover, setIsCover] = useState(true);
-
-  const [play, { stop }] = useSound(TemaniAkuSong, { volume: 0.5 });
+  const [isPlaySound, setIsPlaySound] = useState(false);
 
   useEffect(() => {
     if (!isCover) {
-      play();
+      setIsPlaySound(true);
     }
   });
 
-  const eventDate = new Date('2023-12-30T01:00:00+07:00');
+  const eventDate = new Date('2023-06-01T09:00:00+07:00');
 
   const events: IEvent[] = [
     {
@@ -54,57 +49,22 @@ const Home = () => {
   return (
     <div>
       <Cover isCover={isCover} setIsCover={setIsCover} to={searchParams.get('to') as string} />
-      <div className={isCover ? style.hasCover : style.noCover}>
-        <GroomBride />
-        <Story />
-        <Gallery />
-        <Event date={eventDate} events={events}></Event>
-        <Gift />
-        <Greeting />
-        <Footer />
-        <div className='container'>
-          <MusicControl play={play} stop={stop} />
+      <Suspense>
+        <div className={isCover ? style.hasCover : style.noCover}>
+          <GroomBride />
+          <Story />
+          <Gallery />
+          <Event date={eventDate} events={events}></Event>
+          <Gift />
+          <Greeting />
+          <Footer />
+          <div className='container'>
+            <Music isPlaySound={isPlaySound} />
+          </div>
         </div>
-      </div>
+      </Suspense>
     </div>
   );
 };
 
 export default Home;
-
-interface MusicControlProps {
-  play: () => void;
-  stop: () => void;
-}
-
-const MusicControl = ({ play, stop }: MusicControlProps) => {
-  const [isPlay, setIsPlay] = useState(true);
-
-  const handleClick = () => {
-    if (isPlay) {
-      stop();
-      setIsPlay(false);
-    } else {
-      play();
-      setIsPlay(true);
-    }
-  };
-
-  return (
-    <div className={`${style.musicControl} ${!isPlay ? style.off : ''}`} onClick={handleClick}>
-      <div className={`${style.musicAnimation} ${!isPlay ? style.off : ''}`}>
-        <Lottie
-          animationData={melodyAnimation}
-          loop={true}
-          style={{
-            height: 100,
-            width: 100,
-          }}
-        />
-      </div>
-      <a href='#' className={style.playBtn}>
-        <img src={playIcon} style={{ height: '30px', width: '30px' }} />
-      </a>
-    </div>
-  );
-};

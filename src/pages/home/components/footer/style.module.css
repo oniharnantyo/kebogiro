@@ -7,8 +7,8 @@
 }
 
 .footer::before {
-  background: #eceae1;
-  opacity: 60%;
+  background: #fafafa;
+  opacity: 80%;
   position: absolute;
   content: "\00a0";
   height: 100%;

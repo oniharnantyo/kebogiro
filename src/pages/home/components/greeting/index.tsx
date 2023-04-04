@@ -8,6 +8,7 @@ import sal from 'sal.js';
 interface Values {
   name: string;
   greet: string;
+  attend: string;
 }
 
 interface Errors {
@@ -27,6 +28,7 @@ const Greeting = () => {
       name: values.name,
       greet: values.greet,
       createdAt: new Date(),
+      attend: values.attend,
     };
 
     await addGreeting(req);
@@ -137,6 +139,43 @@ const Greeting = () => {
                       </div>
                     )}
                   </Field>
+                  <div className={style.confirmation}>
+                    <div>
+                      <label>Konfirmasi kehadiran</label>
+                    </div>
+                    <div className={style.confirmationGroup}>
+                      <label htmlFor='yes'>
+                        <Field
+                          id='yes'
+                          name='attend'
+                          component='input'
+                          type='radio'
+                          value='yes'
+                        ></Field>
+                        Akan datang
+                      </label>
+                      <label htmlFor='no'>
+                        <Field
+                          id='no'
+                          name='attend'
+                          component='input'
+                          type='radio'
+                          value='no'
+                        ></Field>
+                        Maaf belum bisa
+                      </label>
+                      <label htmlFor='tentative'>
+                        <Field
+                          id='tentative'
+                          name='attend'
+                          component='input'
+                          type='radio'
+                          value='tentative'
+                        ></Field>
+                        Belum pasti
+                      </label>
+                    </div>
+                  </div>
                   {submitError && <div className='error'>{submitError}</div>}
                   <div className='row center-xs'>
                     <div className='col-xs-12 col-md-6 col-lg-4'>
@@ -169,6 +208,7 @@ const Greeting = () => {
                   name={greeting.name}
                   greet={greeting.greet}
                   createdAt={greeting.createdAt}
+                  attend={greeting.attend}
                 />
               ))}
             </div>
@@ -191,12 +231,23 @@ export default Greeting;
 
 type greetingProps = FC<IGreeting>;
 
-const GreetingItem: greetingProps = ({ name, greet }) => {
+const GreetingItem: greetingProps = ({ name, greet, attend }) => {
   return (
     <>
       <div className='row'>
         <div className='col-xs-12'>
-          <p className={style.name}>{name}</p>
+          <p className={style.name}>
+            {name}{' '}
+            <span
+              className={`${style.attendLabel} ${attend === 'yes' && style.yes} ${
+                attend === 'no' && style.no
+              } ${attend === 'tentative' && style.tentative}`}
+            >
+              {attend === 'yes' ? 'Akan Datang' : ''}
+              {attend === 'no' ? 'Belum bisa datang' : ''}
+              {attend === 'tentative' ? 'Belum pasti datang' : ''}
+            </span>
+          </p>
         </div>
       </div>
       <div className='row'>

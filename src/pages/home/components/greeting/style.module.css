@@ -23,3 +23,39 @@
 .greet {
   margin-bottom: 1rem;
 }
+
+.confirmation {
+  margin-bottom: 1rem;
+}
+
+.confirmationGroup {
+  display: inline-flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.attendLabel {
+  font-weight: lighter;
+  font-size: small;
+  font-family: "Montserrat";
+  margin-left: 1rem;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.attendLabel.tentative {
+  background-color: #EAE7B1;
+  border: 1px solid #3C6255;
+}
+
+.attendLabel.no {
+  color: #fafafa;
+  background-color: #CE5959;
+  border: 1px solid #CE5959;
+}
+
+.attendLabel.yes {
+  color: #fafafa;
+  background-color: #3C6255;
+  border: 1px solid #3C6255;
+}
