@@ -12,6 +12,10 @@
   transition: cubic-bezier(.2, 0, 0, 1) 2s;
 }
 
+.cover :where(audio, canvas, iframe, img, svg, video) {
+  vertical-align: middle !important;
+}
+
 .uncover {
   height: 0;
   overflow: hidden;
@@ -35,7 +39,7 @@
 
 .text {
   color: #fff !important;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Parisienne', cursive;
   text-shadow: 2px 2px #3c6255;
 }
 
@@ -67,7 +71,7 @@
 }
 
 .name {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Parisienne', cursive;
   font-size: 1.5rem;
   overflow: hidden;
 }

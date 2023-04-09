@@ -1,13 +1,7 @@
-// Phone, small screen devices
-$flexbin-phone-max: 400px;
-$flexbin-row-height-phone: 150px;
-$flexbin-space-phone: 4px;
-
 @import '@picocss/pico/scss/pico';
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Parisienne&display=swap');
 @import 'sal.js/src/sal.scss';
 @import 'flexboxgrid/css/flexboxgrid.min.css';
-@import 'flexbin/flexbin.scss';
 
 [data-theme='light'],
 :root:not([data-theme='dark']) {
@@ -31,7 +25,11 @@ $flexbin-space-phone: 4px;
 }
 
 body {
-  font-family: 'Montserrat';
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+:where(audio, canvas, iframe, img, svg, video) {
+  vertical-align: baseline !important;
 }
 
 /* #3C6255 #61876E #A6BB8D #EAE7B1 */

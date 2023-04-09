@@ -1,3 +1,5 @@
+import { FC, useCallback, useEffect, useState } from 'react';
+
 import pantai1Image from '../../../../assets/gallery/pantai1.webp';
 import pantai2Image from '../../../../assets/gallery/pantai2.webp';
 import pantai3Image from '../../../../assets/gallery/pantai3.webp';
@@ -18,8 +20,11 @@ import pasar5Image from '../../../../assets/gallery/pasar5.webp';
 import gallerySingle from '../../../../assets/gallery/gallery-single.webp';
 
 import style from './style.module.css';
-import { useEffect } from 'react';
+import masonryStyle from './masonry.module.css';
 import sal from 'sal.js';
+import { Controlled as ControlledZoom } from 'react-medium-image-zoom';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 const images = [
   pantai1Image,
@@ -86,7 +91,7 @@ const Gallery = () => {
       </div>
       <div className='row'>
         <div className='col-xs-12'>
-          <div className='flexbin'>
+          <div className={masonryStyle.flexbin}>
             {images.map((image, i) => (
               <a
                 key={i}
@@ -95,8 +100,18 @@ const Gallery = () => {
                 data-sal-duration={500}
                 data-sal-delay={i * 1000}
                 data-sal-easing='ease-out-quad'
+                onClick={(e: any) => {
+                  e.preventDefault();
+                }}
               >
-                <img src={image} alt='gallery' loading='lazy' />
+                <Zoom>
+                  <img
+                    src={image}
+                    alt='gallery'
+                    loading='lazy'
+                    className={masonryStyle.flexbinImage}
+                  />
+                </Zoom>
               </a>
             ))}
           </div>

@@ -24,10 +24,8 @@
 }
 
 .title {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 1.4rem;
-  font-style: italic;
-  font-weight: bolder;
+  font-size: 1.5rem;
+  font-weight: normal;
 }
 
 .content {

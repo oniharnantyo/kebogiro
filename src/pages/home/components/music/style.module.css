@@ -9,6 +9,10 @@
   box-shadow: 0 2px 9px 0 hsl(0deg 0% 50% / 63%);
 }
 
+.musicControl :where(audio, canvas, iframe, img, svg, video) {
+  vertical-align: middle !important;
+}
+
 .musicControl.off {
   opacity: .5;
 }

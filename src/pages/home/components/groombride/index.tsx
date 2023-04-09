@@ -26,6 +26,18 @@ const GroomBride = () => {
 
   return (
     <section className={`container ${style.groomBride}`}>
+      <div className='row center-xs'>
+        <div className='col-md-offset-2' />
+        <div className='col-xs column-md-8'>
+          <p style={{ fontStyle: 'italic', fontWeight: 'light' }}>
+            "Jika dua orang ditakdirkan bersama, maka dari sudut bumi mana pun mereka berasal,
+            mereka pasti bertemu. Demikianlah.”
+            <br />
+            <span>Tere Liye</span>
+          </p>
+        </div>
+        <div className='col-md-offset-2' />
+      </div>
       <div className={`${style.bride} row around-xs`}>
         <div
           className={`${style.content} col-6`}
@@ -34,14 +46,14 @@ const GroomBride = () => {
           data-sal-easing='ease-out-quad'
         >
           <p className={style.name}>{Bride.name}</p>
-          <p className={style.childOf}>Putri dari:</p>
+          <p className={style.childOf}>Putri kedua dari:</p>
           <p style={{ marginBottom: '5px' }}>{Bride.parents}</p>
           <p>
             <img
               src={igLogo}
               alt='ig logo'
               className={style.logo}
-              data-sal='slide-left'
+              data-sal='slide-right'
               data-sal-duration={500}
               data-sal-easing='ease-out-quad'
             />
@@ -57,7 +69,13 @@ const GroomBride = () => {
             </div>
             <div className={style.imageFrame}>
               <div className={style.imageWrapper}>
-                <img src={brideImage} alt='bride' />
+                <img
+                  src={brideImage}
+                  alt='bride'
+                  data-sal='slide-left'
+                  data-sal-duration={500}
+                  data-sal-easing='ease-out-quad'
+                />
               </div>
             </div>
           </div>
@@ -90,7 +108,7 @@ const GroomBride = () => {
           data-sal-easing='ease-out-quad'
         >
           <p className={style.name}>{Groom.name}</p>
-          <p className={style.childOf}>Putra dari:</p>
+          <p className={style.childOf}>Putra pertama dari:</p>
           <p style={{ marginBottom: '5px' }}>{Groom.parents}</p>
           <p>
             <img src={igLogo} alt='ig logo' className={style.logo} />
