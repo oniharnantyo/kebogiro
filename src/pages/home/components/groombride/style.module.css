@@ -1,5 +1,5 @@
 .groomBride {
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 0rem 2rem;
 }
 
 .bride {
@@ -13,7 +13,7 @@
 
 .content {
   text-align: center;
-  margin: auto 0.5rem;
+  margin: 1rem 0.5rem;
 }
 
 .name {

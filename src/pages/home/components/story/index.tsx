@@ -46,7 +46,7 @@ const Story = () => {
           <StoryItem
             image={story1Image}
             year='2016'
-            description='Kami pertama kali bertemu di Vihara Vidyaloka Yogyakarta. Setelah bersama menjadi pengurus vihara barulah tumbuh ketertarikan. Di akhir 2016, kami memulai menjalin hubungan.'
+            description='Dua individu berusaha mendekatkan diri dan bersepakat menjalin hubungan.'
           />
           <StoryItem
             image={story3Image}

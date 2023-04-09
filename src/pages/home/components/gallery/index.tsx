@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import pantai1Image from '../../../../assets/gallery/pantai1.webp';
 import pantai2Image from '../../../../assets/gallery/pantai2.webp';
@@ -22,7 +22,6 @@ import gallerySingle from '../../../../assets/gallery/gallery-single.webp';
 import style from './style.module.css';
 import masonryStyle from './masonry.module.css';
 import sal from 'sal.js';
-import { Controlled as ControlledZoom } from 'react-medium-image-zoom';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 
@@ -75,14 +74,14 @@ const Gallery = () => {
             >
               <span className={`${style.verticalDivider} ${style.top}`}></span>
               <div className='col-xs-12'>
-                <p className='quote'>
+                <p className={style.quote}>
                   “Bila dalam perjalanan hidupmu, <br />
                   engkau menemukan seorang teman yang bijaksana dan cocok untuk hidup denganmu,{' '}
                   <br />
                   hendaklah engkau berjalan bersamanya, <br />
                   dengan gembira dan penuh kesadaran mengatasi segala bahaya.”
                 </p>
-                <p className='quote'>Dhammapada XXIII – 328</p>
+                <p className={style.quote}>~ Dhammapada XXIII – 328 ~ </p>
               </div>
               <span className={`${style.verticalDivider} ${style.bottom}`}></span>
             </div>

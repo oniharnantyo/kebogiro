@@ -1,41 +1,29 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import style from './style.module.css';
-import useSound from 'use-sound';
 import Lottie from 'lottie-react';
 
-import TemaniAkuSong from '../../../../assets/music/Sheila on 7 - Temani Aku.mp3';
 import playIcon from '../../../../assets/icon/vinyl.svg';
 import melodyAnimation from '../../../../assets/lottie/melody.json';
 
 interface IMusicProps {
-  isPlaySound: boolean;
+  play: () => void;
+  pause: () => void;
 }
 
 type MusicProps = FC<IMusicProps>;
 
-const Music: MusicProps = ({ isPlaySound }) => {
-  const [isPlay, setIsPlay] = useState(false);
-
-  const [play, { stop }] = useSound(TemaniAkuSong, { volume: 0.5 });
+const Music: MusicProps = ({ play, pause }) => {
+  const [isPlay, setIsPlay] = useState(true);
 
   const handleClick = () => {
     if (isPlay) {
-      stop();
+      pause();
       setIsPlay(false);
-      isPlaySound = false;
     } else {
       play();
       setIsPlay(true);
-      isPlaySound = true;
     }
   };
-
-  useEffect(() => {
-    if (isPlaySound) {
-      setIsPlay(true);
-      play();
-    }
-  }, [isPlaySound]);
 
   return (
     <div className={`${style.musicControl} ${!isPlay ? style.off : ''}`} onClick={handleClick}>

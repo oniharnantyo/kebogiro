@@ -33,7 +33,7 @@ const GroomBride = () => {
             "Jika dua orang ditakdirkan bersama, maka dari sudut bumi mana pun mereka berasal,
             mereka pasti bertemu. Demikianlah.”
             <br />
-            <span>Tere Liye</span>
+            <span>- Tere Liye -</span>
           </p>
         </div>
         <div className='col-md-offset-2' />
@@ -48,19 +48,12 @@ const GroomBride = () => {
           <p className={style.name}>{Bride.name}</p>
           <p className={style.childOf}>Putri kedua dari:</p>
           <p style={{ marginBottom: '5px' }}>{Bride.parents}</p>
-          <p>
-            <img
-              src={igLogo}
-              alt='ig logo'
-              className={style.logo}
-              data-sal='slide-right'
-              data-sal-duration={500}
-              data-sal-easing='ease-out-quad'
-            />
+          <div className='row center-xs'>
+            <img src={igLogo} alt='ig logo' className={style.logo} />
             <a href={Bride.igLink} target='_blank'>
               {Bride.ig}
             </a>
-          </p>
+          </div>
         </div>
         <div className='col-6'>
           <div className={style.personWrapper}>
@@ -110,12 +103,12 @@ const GroomBride = () => {
           <p className={style.name}>{Groom.name}</p>
           <p className={style.childOf}>Putra pertama dari:</p>
           <p style={{ marginBottom: '5px' }}>{Groom.parents}</p>
-          <p>
+          <div className='row center-xs'>
             <img src={igLogo} alt='ig logo' className={style.logo} />
             <a href={Groom.igLink} target='_blank'>
               {Groom.ig}
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </section>

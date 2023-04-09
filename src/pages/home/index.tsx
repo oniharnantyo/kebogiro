@@ -4,6 +4,8 @@ import style from './index.module.css';
 
 import IEvent from '../../models/event';
 
+import useSound from 'use-sound';
+
 import Cover from './components/cover';
 
 const GroomBride = React.lazy(() => import('./components/groombride'));
@@ -15,15 +17,18 @@ const Gift = React.lazy(() => import('./components/gift'));
 const Story = React.lazy(() => import('./components/story'));
 const Music = React.lazy(() => import('./components/music'));
 
+import TemaniAkuSong from '../../assets/music/Sheila on 7 - Temani Aku.mp3';
+
 const Home = () => {
   const searchParams = new URLSearchParams(document.location.search);
 
   const [isCover, setIsCover] = useState(true);
-  const [isPlaySound, setIsPlaySound] = useState(false);
+
+  const [play, { pause }] = useSound(TemaniAkuSong, { volume: 0.5 });
 
   useEffect(() => {
     if (!isCover) {
-      setIsPlaySound(true);
+      play();
     }
   });
 
@@ -59,7 +64,7 @@ const Home = () => {
           <Greeting />
           <Footer />
           <div className='container'>
-            <Music isPlaySound={isPlaySound} />
+            <Music play={play} pause={pause} />
           </div>
         </div>
       </Suspense>
