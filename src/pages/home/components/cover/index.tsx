@@ -25,7 +25,6 @@ const Cover = (props: CoverProps) => {
         className={`container-fluid ${style.contentWrapper}`}
         style={{ backgroundImage: `url(${coverImage})` }}
       >
-        {/* <img src={coverImage} alt='' /> */}
         <div className={`${style.textWrapper}`}>
           <h1
             className={`${style.text} ${style.title}`}

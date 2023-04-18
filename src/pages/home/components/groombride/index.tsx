@@ -101,7 +101,7 @@ const GroomBride = () => {
           data-sal-easing='ease-out-quad'
         >
           <p className={style.name}>{Groom.name}</p>
-          <p className={style.childOf}>Putra pertama dari:</p>
+          <p className={style.childOf}>Putra tunggal dari:</p>
           <p style={{ marginBottom: '5px' }}>{Groom.parents}</p>
           <div className='row center-xs'>
             <img src={igLogo} alt='ig logo' className={style.logo} />

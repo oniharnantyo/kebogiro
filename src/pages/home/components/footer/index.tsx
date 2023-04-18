@@ -29,8 +29,8 @@ const footer = () => {
                 <div className={`col-xs-12 ${style.invitersWrapper}`}>
                   <p style={{ fontWeight: 'bold' }}>Turut Mengundang:</p>
                   <ul className={style.inviters}>
-                    <li>Keluarga Bapak Buseri Dwi Prayitno</li>
-                    <li>Keluarga Bapak Piyahno</li>
+                    <li>Keluarga Besar Bapak Buseri Dwi Prayitno</li>
+                    <li>Keluarga Besar Bapak Piyahno</li>
                   </ul>
                   <p className={style.groomBride}>Metta & Oni</p>
                 </div>
