@@ -33,7 +33,7 @@ const GroomBride = () => {
             "Jika dua orang ditakdirkan bersama, maka dari sudut bumi mana pun mereka berasal,
             mereka pasti bertemu. Demikianlah.”
             <br />
-            <span>- Tere Liye -</span>
+            <span>~ Tere Liye ~</span>
           </p>
         </div>
         <div className='col-md-offset-2' />

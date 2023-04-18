@@ -22,6 +22,9 @@ import TemaniAkuSong from '../../assets/music/Sheila on 7 - Temani Aku.mp3';
 const Home = () => {
   const searchParams = new URLSearchParams(document.location.search);
 
+  const to = searchParams.get('to') as string;
+  const reception = searchParams.get('reception') as string;
+
   const [isCover, setIsCover] = useState(true);
 
   const [play, { pause }] = useSound(TemaniAkuSong, { volume: 0.5 });
@@ -35,6 +38,17 @@ const Home = () => {
   const eventDate = new Date('2023-06-01T09:00:00+07:00');
 
   const events: IEvent[] = [
+    ...(reception === '1'
+      ? [
+          {
+            title: 'Resepsi',
+            startDate: new Date('2023-05-31T13:00:00+07:00'),
+            endDate: new Date('2023-05-31T17:00:00+07:00'),
+            place: 'RT 5 / RW 2 Nglarangan, Tleter, Kaloran, Temanggung',
+            placeLink: 'https://goo.gl/maps/zpJbGtXMjQp9fbAc9',
+          },
+        ]
+      : []),
     {
       title: 'Pemberkahan Pernikahan',
       startDate: new Date('2023-06-01T09:00:00+07:00'),
@@ -42,18 +56,22 @@ const Home = () => {
       place: `Vihara Dharma Sagara\nNgalarangan, Tleter, Kaloran, Temanggung`,
       placeLink: 'https://goo.gl/maps/hztx2ELCuWEdQp9WA',
     },
-    {
-      title: 'Resepsi',
-      startDate: new Date('2023-06-01T15:00:00+07:00'),
-      endDate: new Date('2023-06-01T17:00:00+07:00'),
-      place: 'RT 5 / RW 2 Nglarangan, Tleter, Kaloran, Temanggung',
-      placeLink: 'https://goo.gl/maps/zpJbGtXMjQp9fbAc9',
-    },
+    ...(reception !== '1'
+      ? [
+          {
+            title: 'Resepsi',
+            startDate: new Date('2023-06-01T15:00:00+07:00'),
+            endDate: new Date('2023-06-01T17:00:00+07:00'),
+            place: 'RT 5 / RW 2 Nglarangan, Tleter, Kaloran, Temanggung',
+            placeLink: 'https://goo.gl/maps/zpJbGtXMjQp9fbAc9',
+          },
+        ]
+      : []),
   ];
 
   return (
     <div>
-      <Cover isCover={isCover} setIsCover={setIsCover} to={searchParams.get('to') as string} />
+      <Cover isCover={isCover} setIsCover={setIsCover} to={to} />
       <Suspense>
         <div className={isCover ? style.hasCover : style.noCover}>
           <GroomBride />
