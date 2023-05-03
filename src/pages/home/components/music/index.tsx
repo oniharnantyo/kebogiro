@@ -7,17 +7,17 @@ import melodyAnimation from '../../../../assets/lottie/melody.json';
 
 interface IMusicProps {
   play: () => void;
-  pause: () => void;
+  stop: () => void;
 }
 
 type MusicProps = FC<IMusicProps>;
 
-const Music: MusicProps = ({ play, pause }) => {
+const Music: MusicProps = ({ play, stop }) => {
   const [isPlay, setIsPlay] = useState(true);
 
   const handleClick = () => {
     if (isPlay) {
-      pause();
+      stop();
       setIsPlay(false);
     } else {
       play();

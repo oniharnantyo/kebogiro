@@ -38,43 +38,6 @@ const GroomBride = () => {
         </div>
         <div className='col-md-offset-2' />
       </div>
-      <div className={`${style.bride} row around-xs`}>
-        <div
-          className={`${style.content} col-6`}
-          data-sal='slide-down'
-          data-sal-duration={500}
-          data-sal-easing='ease-out-quad'
-        >
-          <p className={style.name}>{Bride.name}</p>
-          <p className={style.childOf}>Putri kedua dari:</p>
-          <p style={{ marginBottom: '5px' }}>{Bride.parents}</p>
-          <div className='row center-xs'>
-            <img src={igLogo} alt='ig logo' className={style.logo} />
-            <a href={Bride.igLink} target='_blank'>
-              {Bride.ig}
-            </a>
-          </div>
-        </div>
-        <div className='col-6'>
-          <div className={style.personWrapper}>
-            <div className={`${style.personBg} ${style.bride}`}>
-              <p className={style.personTitle}> The Bride</p>
-            </div>
-            <div className={style.imageFrame}>
-              <div className={style.imageWrapper}>
-                <img
-                  src={brideImage}
-                  alt='bride'
-                  data-sal='slide-left'
-                  data-sal-duration={500}
-                  data-sal-easing='ease-out-quad'
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div className={`${style.groom} row around-xs`}>
         <div className='col-6'>
           <div className={style.personWrapper}>
@@ -108,6 +71,43 @@ const GroomBride = () => {
             <a href={Groom.igLink} target='_blank'>
               {Groom.ig}
             </a>
+          </div>
+        </div>
+      </div>
+
+      <div className={`${style.bride} row around-xs`}>
+        <div
+          className={`${style.content} col-6`}
+          data-sal='slide-down'
+          data-sal-duration={500}
+          data-sal-easing='ease-out-quad'
+        >
+          <p className={style.name}>{Bride.name}</p>
+          <p className={style.childOf}>Putri kedua dari:</p>
+          <p style={{ marginBottom: '5px' }}>{Bride.parents}</p>
+          <div className='row center-xs'>
+            <img src={igLogo} alt='ig logo' className={style.logo} />
+            <a href={Bride.igLink} target='_blank'>
+              {Bride.ig}
+            </a>
+          </div>
+        </div>
+        <div className='col-6'>
+          <div className={style.personWrapper}>
+            <div className={`${style.personBg} ${style.bride}`}>
+              <p className={style.personTitle}> The Bride</p>
+            </div>
+            <div className={style.imageFrame}>
+              <div className={style.imageWrapper}>
+                <img
+                  src={brideImage}
+                  alt='bride'
+                  data-sal='slide-left'
+                  data-sal-duration={500}
+                  data-sal-easing='ease-out-quad'
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -95,10 +95,6 @@ const Gallery = () => {
               <a
                 key={i}
                 href={image}
-                data-sal='flip-left'
-                data-sal-duration={500}
-                data-sal-delay={i * 1000}
-                data-sal-easing='ease-out-quad'
                 onClick={(e: any) => {
                   e.preventDefault();
                 }}

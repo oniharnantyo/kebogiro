@@ -27,7 +27,7 @@ const Home = () => {
 
   const [isCover, setIsCover] = useState(true);
 
-  const [play, { pause }] = useSound(TemaniAkuSong, { volume: 0.5 });
+  const [play, { stop }] = useSound(TemaniAkuSong, { volume: 0.5 });
 
   useEffect(() => {
     if (!isCover) {
@@ -82,7 +82,7 @@ const Home = () => {
           <Greeting />
           <Footer />
           <div className='container'>
-            <Music play={play} pause={pause} />
+            <Music play={play} stop={stop} />
           </div>
         </div>
       </Suspense>

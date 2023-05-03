@@ -32,7 +32,7 @@ const footer = () => {
                     <li>Keluarga Besar Bapak Buseri Dwi Prayitno</li>
                     <li>Keluarga Besar Bapak Piyahno</li>
                   </ul>
-                  <p className={style.groomBride}>Metta & Oni</p>
+                  <p className={style.groomBride}>Oni & Metta</p>
                 </div>
               </div>
             </div>

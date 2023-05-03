@@ -32,7 +32,7 @@ const Cover = (props: CoverProps) => {
             data-sal-duration={700}
             data-sal-easing='ease-out-quad'
           >
-            Metta & Oni
+            Oni & Metta
           </h1>
           <h3
             className={`${style.text} ${style.subtitle}`}

@@ -7,8 +7,8 @@ import commonjs from '@rollup/plugin-commonjs';
 export default defineConfig({
   plugins: [
     commonjs({
-      exclude: '/node/modules/dayjs',
-      requireReturnsDefault: 'auto', // <---- this solves default issue
+      exclude: '/node_modules/dayjs',
+      requireReturnsDefault: 'auto',
     }),
     inject({
       $: 'jquery',
