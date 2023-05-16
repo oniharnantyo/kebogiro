@@ -129,7 +129,16 @@ const BankAccountItem = ({ account, bank, name }: BankAccountItemProps) => {
 
 const LinkAjaDescription = () => {
   return (
-    <div>
+    <div className={style.linkaja}>
+      <p>Kirim ke:</p>
+      <p>
+        <b>
+          085643553402
+          <br />
+          (Oni Harnantyo)
+        </b>
+      </p>
+      <p>atau</p>
       <img src={linkaja} alt='qr linkaja oni' />
       <p className={style.linkajaNote}>* Scan menggunakan aplikasi LinkAja</p>
     </div>

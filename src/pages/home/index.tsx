@@ -60,8 +60,8 @@ const Home = () => {
       ? [
           {
             title: 'Resepsi',
-            startDate: new Date('2023-06-01T15:00:00+07:00'),
-            endDate: new Date('2023-06-01T17:00:00+07:00'),
+            startDate: new Date('2023-06-01T14:30:00+07:00'),
+            endDate: new Date('2023-06-01T16:00:00+07:00'),
             place: 'RT 5 / RW 2 Nglarangan, Tleter, Kaloran, Temanggung',
             placeLink: 'https://goo.gl/maps/zpJbGtXMjQp9fbAc9',
           },

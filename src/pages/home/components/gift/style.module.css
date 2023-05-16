@@ -40,6 +40,10 @@
   margin-left: 5px;
 }
 
+.linkaja {
+  text-align: center;
+}
+
 .linkajaNote {
   font-size: 0.7rem;
   color: red;
