@@ -3,8 +3,8 @@
 }
 
 .title {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 2rem;
+  font-family: 'Parisienne', cursive;
+  font-size: 2.5rem;
   text-align: center;
 }
 
@@ -15,11 +15,46 @@
 }
 
 .name {
-  font-family: 'Libre Baskerville', serif;
   font-weight: bolder;
   margin-bottom: 0;
 }
 
 .greet {
   margin-bottom: 1rem;
+}
+
+.confirmation {
+  margin-bottom: 1rem;
+}
+
+.confirmationGroup {
+  display: inline-flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.attendLabel {
+  font-weight: lighter;
+  font-size: small;
+  font-family: "Montserrat";
+  margin-left: 1rem;
+  padding: 3px;
+  border-radius: 10px;
+}
+
+.attendLabel.tentative {
+  background-color: #EAE7B1;
+  border: 1px solid #3C6255;
+}
+
+.attendLabel.no {
+  color: #fafafa;
+  background-color: #CE5959;
+  border: 1px solid #CE5959;
+}
+
+.attendLabel.yes {
+  color: #fafafa;
+  background-color: #3C6255;
+  border: 1px solid #3C6255;
 }

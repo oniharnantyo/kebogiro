@@ -3,10 +3,12 @@ import style from './style.module.css';
 import IGreeting from '../../../../models/greeting';
 import { addGreeting, fetchGreetings } from '../../../../services/greetings';
 import { Form, Field } from 'react-final-form';
+import sal from 'sal.js';
 
 interface Values {
   name: string;
   greet: string;
+  attend: string;
 }
 
 interface Errors {
@@ -26,6 +28,7 @@ const Greeting = () => {
       name: values.name,
       greet: values.greet,
       createdAt: new Date(),
+      attend: values.attend,
     };
 
     await addGreeting(req);
@@ -61,17 +64,31 @@ const Greeting = () => {
   };
 
   useEffect(() => {
+    sal();
     getGreetingsData();
     setIsNewGreeting(false);
   }, [isNewGreeting]);
 
   return (
-    <div className={`container ${style.greeting}`}>
-      <h2 className={style.title}>Pesan & Ucapan</h2>
+    <section className={`container ${style.greeting}`}>
+      <h2
+        className={style.title}
+        data-sal='slide-down'
+        data-sal-duration={500}
+        data-sal-easing='ease-out-quad'
+      >
+        Pesan & Ucapan
+      </h2>
       <div className='row'>
         <div className='col-md-offset-1' />
         <div className='col-xs'>
-          <div className='container'>
+          <div
+            className='container'
+            data-sal='slide-up'
+            data-sal-duration={500}
+            data-sal-delay={200}
+            data-sal-easing='ease-out-quad'
+          >
             <Form
               onSubmit={onSubmit}
               validate={(values) => {
@@ -122,6 +139,43 @@ const Greeting = () => {
                       </div>
                     )}
                   </Field>
+                  <div className={style.confirmation}>
+                    <div>
+                      <label>Konfirmasi kehadiran</label>
+                    </div>
+                    <div className={style.confirmationGroup}>
+                      <label htmlFor='yes'>
+                        <Field
+                          id='yes'
+                          name='attend'
+                          component='input'
+                          type='radio'
+                          value='yes'
+                        ></Field>
+                        Akan datang
+                      </label>
+                      <label htmlFor='no'>
+                        <Field
+                          id='no'
+                          name='attend'
+                          component='input'
+                          type='radio'
+                          value='no'
+                        ></Field>
+                        Maaf belum bisa
+                      </label>
+                      <label htmlFor='tentative'>
+                        <Field
+                          id='tentative'
+                          name='attend'
+                          component='input'
+                          type='radio'
+                          value='tentative'
+                        ></Field>
+                        Belum pasti
+                      </label>
+                    </div>
+                  </div>
                   {submitError && <div className='error'>{submitError}</div>}
                   <div className='row center-xs'>
                     <div className='col-xs-12 col-md-6 col-lg-4'>
@@ -140,13 +194,21 @@ const Greeting = () => {
       <div className={`row ${style.greetings}`}>
         <div className='col-md-offset-1' />
         <div className='col-xs'>
-          <div className='container'>
+          <div
+            className='container'
+            data-sal='slide-up'
+            data-sal-duration={500}
+            data-sal-delay={400}
+            data-sal-easing='ease-out-quad'
+          >
             <div>
-              {greetings.map((greeting) => (
+              {greetings.map((greeting, index) => (
                 <GreetingItem
+                  key={index}
                   name={greeting.name}
                   greet={greeting.greet}
                   createdAt={greeting.createdAt}
+                  attend={greeting.attend}
                 />
               ))}
             </div>
@@ -161,7 +223,7 @@ const Greeting = () => {
         </div>
         <div className='col-md-offset-1' />
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -169,12 +231,23 @@ export default Greeting;
 
 type greetingProps = FC<IGreeting>;
 
-const GreetingItem: greetingProps = ({ name, greet }) => {
+const GreetingItem: greetingProps = ({ name, greet, attend }) => {
   return (
     <>
       <div className='row'>
         <div className='col-xs-12'>
-          <p className={style.name}>{name}</p>
+          <p className={style.name}>
+            {name}{' '}
+            <span
+              className={`${style.attendLabel} ${attend === 'yes' && style.yes} ${
+                attend === 'no' && style.no
+              } ${attend === 'tentative' && style.tentative}`}
+            >
+              {attend === 'yes' ? 'Akan Datang' : ''}
+              {attend === 'no' ? 'Belum bisa datang' : ''}
+              {attend === 'tentative' ? 'Belum pasti datang' : ''}
+            </span>
+          </p>
         </div>
       </div>
       <div className='row'>

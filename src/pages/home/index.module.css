@@ -1,0 +1,37 @@
+.hasCover {
+  overflow: hidden;
+  height: 0;
+}
+
+.noCover {
+  height: 100%;
+}
+
+.musicControl {
+  position: fixed;
+  bottom: 5%;
+  right: 25px;
+  z-index: 99;
+  padding: 0.6rem;
+  border-radius: 50%;
+  background: #eceae1;
+  box-shadow: 0 2px 9px 0 hsl(0deg 0% 50% / 63%);
+}
+
+.musicControl.off {
+  opacity: .5;
+}
+
+.musicAnimation {
+  position: absolute;
+  bottom: 20px;
+  right: -15px;
+}
+
+.musicAnimation.off {
+  display: none;
+}
+
+.musicControl a {
+  cursor: pointer;
+}

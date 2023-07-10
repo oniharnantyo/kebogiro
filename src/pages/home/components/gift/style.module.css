@@ -4,15 +4,15 @@
 }
 
 .title {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 2rem;
+  font-family: 'Parisienne', cursive;
+  font-size: 2.5rem;
   text-align: center;
 }
 
 .placeholder {
   background-color: #EAE7B1;
   padding: 2rem 1.5rem;
-  min-height: 400px;
+  min-height: 300px;
 }
 
 .giftList {
@@ -38,4 +38,13 @@
   overflow: visible;
   vertical-align: -0.15em;
   margin-left: 5px;
+}
+
+.linkaja {
+  text-align: center;
+}
+
+.linkajaNote {
+  font-size: 0.7rem;
+  color: red;
 }

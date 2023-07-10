@@ -1,16 +1,13 @@
 .countdown {
-  height: 350px;
   width: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .date {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Parisienne', cursive;
   text-align: center;
   font-size: 2rem;
   margin-bottom: 1.3rem !important;
+  letter-spacing: 0.5rem;
 }
 
 .counter {
@@ -20,10 +17,10 @@
   padding: 0.5rem 0.1rem;
 }
 
-.counter__item {
+.counterItem {
   font-size: 1.5rem;
 }
 
-.counter__label {
+.counterLabel {
   font-size: 1rem;
 }

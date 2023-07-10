@@ -1,3 +1,7 @@
+.groomBride {
+  padding: 4rem 2rem 0rem 2rem;
+}
+
 .bride {
   margin-bottom: 1rem;
   padding: 1rem 1rem;
@@ -9,13 +13,14 @@
 
 .content {
   text-align: center;
-  margin: auto 0.5rem;
+  margin: 1rem 0.5rem;
 }
 
 .name {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 2rem;
+  font-family: 'Parisienne', cursive;
+  font-size: 2.5rem;
   font-style: italic;
+  font-weight: 500;
 }
 
 .childOf {
@@ -55,7 +60,7 @@
   top: -60px;
   background-color: #3C6255;
   z-index: -99;
-  padding: 0.5rem;
+  padding: 0.3rem 0 0 1rem;
 }
 
 .personBg.bride {
@@ -67,8 +72,8 @@
 }
 
 .personTitle {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 2rem;
+  font-family: 'Parisienne', cursive;
+  font-size: 2.2rem;
   color: white;
 }
 
@@ -77,6 +82,10 @@
 }
 
 @media (min-width: 768px) {
+  .groomBride {
+    padding: 4rem 2rem 2rem 2rem;
+  }
+
   .imageWrapper {
     width: 350px;
     height: 350px;
@@ -87,7 +96,7 @@
     height: 350px;
     top: -80px;
     z-index: -99;
-    padding: 0.75rem;
+    padding: 0.75rem 0 0 1.5rem;
   }
 
   .personBg.bride {

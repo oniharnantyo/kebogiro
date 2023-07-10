@@ -1,8 +1,23 @@
 .footer {
+  position: relative;
+  min-height: 500px;
   padding: 2rem;
-  background-position: center center;
+  background-position: 5% top;
   background-size: cover;
-  text-shadow: 0 0 30px rgb(255 255 255 / 80%);
+}
+
+.footer::before {
+  background: #fafafa;
+  opacity: 80%;
+  position: absolute;
+  content: "\00a0";
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+}
+
+.invitersWrapper {
+  z-index: 99;
 }
 
 .inviters li {
@@ -11,6 +26,30 @@
 
 .groomBride {
   font-size: 2rem;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Parisienne', cursive;
   font-style: italic;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    background-position: left top;
+  }
+
+  .footer::before {
+    background: linear-gradient(left,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%);
+    background: -moz-linear-gradient(left,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%);
+    background: -ms-linear-gradient(left,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%);
+    background: -o-linear-gradient(left,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%);
+    background: -webkit-linear-gradient(left,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%);
+  }
 }

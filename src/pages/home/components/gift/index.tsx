@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import style from './style.module.css';
 import copyIcon from '../../../../assets/icon/copy.svg';
+import linkaja from '../../../../assets/linkaja.webp';
+import sal from 'sal.js';
 
 const Gift = () => {
   const [gift, setGift] = useState('transfer');
@@ -10,13 +12,36 @@ const Gift = () => {
     setGift(val);
   };
 
+  useEffect(() => {
+    sal();
+  }, []);
+
   return (
-    <div className='gift'>
+    <section className={`${style.gift}`} style={{ marginBottom: 0 }}>
       <div className='container'>
-        <h2 className={style.title}>Kirim Hadiah</h2>
-        <div className='row'>
-          <div className='col-xs-12 col-md-6'>
-            <div className='container'>
+        <h2
+          className={style.title}
+          data-sal='slide-down'
+          data-sal-duration={500}
+          data-sal-easing='ease-out-quad'
+        >
+          Kirim Hadiah
+        </h2>
+        <div
+          className='row'
+          data-sal='slide-up'
+          data-sal-duration={500}
+          data-sal-easing='ease-out-quad'
+        >
+          <div className='col-md-offset-1' />
+          <div className='col-xs-12 col-md-5'>
+            <div
+              className='container'
+              data-sal='slide-up'
+              data-sal-duration={500}
+              data-sal-delay={200}
+              data-sal-easing='ease-out-quad'
+            >
               <fieldset onChange={handleGiftListSelected}>
                 <div className={style.giftList}>
                   <label htmlFor='transfer'>
@@ -45,7 +70,7 @@ const Gift = () => {
               </fieldset>
             </div>
           </div>
-          <div className='col-xs-12 col-md-6'>
+          <div className='col-xs-12 col-md-5'>
             <div className='container'>
               <div className={style.placeholder}>
                 {gift == 'transfer' && <BankDescription />}
@@ -53,9 +78,10 @@ const Gift = () => {
               </div>
             </div>
           </div>
+          <div className='col-md-offset-1' />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -64,9 +90,12 @@ export default Gift;
 const BankDescription = () => {
   return (
     <>
-      <BankAccountItem account='123123121' bank='Bank BCA' name='Oni Harnantyo'></BankAccountItem>
-      <BankAccountItem account='123123122' bank='Bank BCA' name='Oni Harnantyo'></BankAccountItem>
-      <BankAccountItem account='123123123' bank='Bank BCA' name='Oni Harnantyo'></BankAccountItem>
+      <BankAccountItem account='6800837519' bank='Bank BCA' name='Oni Harnantyo'></BankAccountItem>
+      <BankAccountItem
+        account='0374036731'
+        bank='Bank BCA'
+        name='Dwiyana Mettasari'
+      ></BankAccountItem>
     </>
   );
 };
@@ -99,5 +128,19 @@ const BankAccountItem = ({ account, bank, name }: BankAccountItemProps) => {
 };
 
 const LinkAjaDescription = () => {
-  return <>bbb</>;
+  return (
+    <div className={style.linkaja}>
+      <p>Kirim ke:</p>
+      <p>
+        <b>
+          085643553402
+          <br />
+          (Oni Harnantyo)
+        </b>
+      </p>
+      <p>atau</p>
+      <img src={linkaja} alt='qr linkaja oni' />
+      <p className={style.linkajaNote}>* Scan menggunakan aplikasi LinkAja</p>
+    </div>
+  );
 };
